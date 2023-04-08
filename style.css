@@ -197,9 +197,6 @@
 }
 
 /*Header*/
-header{
-    margin:8px 0;
-}
 .sticky-header {
     position: sticky;
     left: 0;
@@ -209,15 +206,23 @@ header{
     z-index: 1000;
     background-color:white;
 }
-#navbarToggleExternalContent {
+#threeLinesNavContent{
     position: absolute;
     left: 0;
     right: 0;
     margin: 0 auto;
     padding: 16px;
 }
+.threeLinesNavSmartContent{
+    height: calc(100vh - 64px);
+    overflow-y: auto;
+}
 #header-top{
-    min-height:48px;
+    min-height:64px;
+    padding:8px 0;
+}
+#header-bottom{
+    padding:8px 0;
 }
 #no-title-section{
     padding-bottom:19.188px

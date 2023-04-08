@@ -12,22 +12,66 @@
 
         <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
         <script>
-            let fixListOn=true
             $(document).ready(function(){
-                $("#header-top-center > div").hide();
+                let fixListOn=true;
+                let stickyOn=false;
+                let win = $(window);
 
-                if ($(window).outerWidth() < 1400) {
+                if (win.outerWidth() < 1400) {
                     $("#logSubButtons").hide();
                     $("#userButton").show();
                 }else{
                     $("#logSubButtons").show();
                     $("#userButton").hide();
                 }
-
-                if ($(window).outerWidth() < 992) {
+                if(win.outerWidth() < 1200){
+                    $("#searchIcon").hide();
+                    $("#searchInput").css({"border":"1px","border-style":"solid"});
+                    $("#searchButton").show();
+                }
+                else{
+                    $("#searchIcon").show();
+                    $("#searchInput").css({"border":"","border-style":""});
+                    $("#searchButton").hide();
+                }
+                if (win.outerWidth() < 992) {
                     $("#brand-list").hide();
+                    $("#searchBar").prependTo("#threeLinesNavContent");
+                    $("#searchBar").addClass("spaceSeparator separator")
+                    $("#searchIcon").show();
+                    $("#searchIcon").addClass("bg-body-tertiary")
+                    $("#searchButton").hide();
                 }else{
                     $("#brand-list").show();
+                    $("#searchBar").appendTo("#header-top-left");
+                    $("#searchBar").removeClass("spaceSeparator separator")
+                    $("#searchIcon").removeClass("bg-body-tertiary")
+                }
+                if(win.outerWidth() < 768){
+                    $("#header-bottom").hide();
+                    $("#header-navbar").hide();
+                    $("#smartNav").show();
+                    $("#pcNav").hide();
+                    $("#threeLinesNavContent").addClass("threeLinesNavSmartContent container-fluid")
+                    $("#threeLinesNavContent").removeClass("container")
+                    $("#header-fixed-list").hide();
+                    $("#header-fixed-title").show();
+                }else{
+                    if(stickyOn==false){
+                        $("#header-bottom").show();
+                        $("#header-navbar").show();
+                        if(fixListOn) {
+                            $("#header-fixed-list").show();
+                            $("#header-fixed-title").hide();
+                        }else{
+                            $("#header-fixed-list").hide();
+                            $("#header-fixed-title").show();
+                        }
+                    }
+                    $("#smartNav").hide();
+                    $("#pcNav").show();
+                    $("#threeLinesNavContent").removeClass("threeLinesNavSmartContent container-fluid")
+                    $("#threeLinesNavContent").addClass("container")
                 }
 
                 $("#three-lines-nav").click(function(){
@@ -63,15 +107,18 @@
                 })
 
                 $(window).scroll(function(){
-                    if($(window).outerWidth()>768) {
-                        if ($(window).scrollTop() > $("header").outerHeight(true)) {
-                            $("header").addClass("sticky-header")
+                    if ($(window).scrollTop() > $("header").outerHeight(true)) {
+                        $("header").addClass("sticky-header");
+                        if($(window).outerWidth()>768){
                             $("#header-bottom").hide();
                             $("#header-navbar").hide();
                             $("#header-fixed-list").hide();
                             $("#header-fixed-title").show();
-                        } else {
-                            $("header").removeClass("sticky-header")
+                        }
+                        stickyOn=true;
+                    } else {
+                        $("header").removeClass("sticky-header");
+                        if($(window).outerWidth()>768){
                             $("#header-bottom").show();
                             $("#header-navbar").show();
                             if (fixListOn) {
@@ -82,11 +129,10 @@
                                 $("#header-fixed-title").show();
                             }
                         }
-                    }
+                        stickyOn=false;                    }
                 })
 
                 $(window).on('resize', function(){
-                    var win = $(this);
                     if (win.outerWidth() < 1400) {
                         $("#logSubButtons").hide();
                         $("#userButton").show();
@@ -106,7 +152,7 @@
                     }
                     if (win.outerWidth() < 992) {
                         $("#brand-list").hide();
-                        $("#searchBar").prependTo("#navbarToggleExternalContent");
+                        $("#searchBar").prependTo("#threeLinesNavContent");
                         $("#searchBar").addClass("spaceSeparator separator")
                         $("#searchIcon").show();
                         $("#searchIcon").addClass("bg-body-tertiary")
@@ -116,25 +162,32 @@
                         $("#searchBar").appendTo("#header-top-left");
                         $("#searchBar").removeClass("spaceSeparator separator")
                         $("#searchIcon").removeClass("bg-body-tertiary")
-                        $("#searchButton").show();
                     }
                     if(win.outerWidth()<768){
-                        $("header").addClass("sticky-header")
                         $("#header-bottom").hide();
                         $("#header-navbar").hide();
+                        $("#smartNav").show();
+                        $("#pcNav").hide();
+                        $("#threeLinesNavContent").addClass("threeLinesNavSmartContent container-fluid")
+                        $("#threeLinesNavContent").removeClass("container")
                         $("#header-fixed-list").hide();
                         $("#header-fixed-title").show();
                     }else{
-                        $("header").removeClass("sticky-header")
-                        $("#header-bottom").show();
-                        $("#header-navbar").show();
-                        if(fixListOn) {
-                            $("#header-fixed-list").show();
-                            $("#header-fixed-title").hide();
-                        }else{
-                            $("#header-fixed-list").hide();
-                            $("#header-fixed-title").show();
+                        if(stickyOn==false){
+                            $("#header-bottom").show();
+                            $("#header-navbar").show();
+                            if(fixListOn) {
+                                $("#header-fixed-list").show();
+                                $("#header-fixed-title").hide();
+                            }else{
+                                $("#header-fixed-list").hide();
+                                $("#header-fixed-title").show();
+                            }
                         }
+                        $("#smartNav").hide();
+                        $("#pcNav").show();
+                        $("#threeLinesNavContent").removeClass("threeLinesNavSmartContent container-fluid")
+                        $("#threeLinesNavContent").addClass("container")
                     }
                 });
             });
@@ -148,11 +201,11 @@
         <title>Il messaggero</title>
     </head>
     <body>
-        <header>
+        <header class="">
             <div class="container">
                 <div class="row text-center justify-content-between align-items-center" id="header-top">
                     <div class="col-md-4 col-3 d-inline-flex justify-content-start align-items-center" id="header-top-left">
-                        <button type="button" class="smartButton" id="three-lines-nav" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <button type="button" class="smartButton" id="three-lines-nav" data-bs-toggle="collapse" data-bs-target="#threeLinesNavContent" aria-controls="threeLinesNavContent" aria-expanded="false" aria-label="threeLinesNavContent">
                             <i class="fa-solid fa-bars-staggered fa-lg"></i>
                         </button>
                         <div class="input-group" id="searchBar">
@@ -194,8 +247,8 @@
                     </div>
                 </div>
 
-                <div class="collapse bg-white container" id="navbarToggleExternalContent">
-                    <div class="row">
+                <div class="collapse bg-white container" id="threeLinesNavContent">
+                    <div class="row" id="pcNav">
                         <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                             <div class="fs-14px fw-bold mb-2">SEZIONI</div>
                             <ul class="list-group list-unstyled">
@@ -257,9 +310,98 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="spaceDivs" id="smartNav">
+                        <div class="separator">
+                            <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#sezioniCollapse" role="button" aria-expanded="false" aria-controls="sezioniCollapse">
+                                SEZIONI
+                            </a>
+                            <div class="collapse" id="sezioniCollapse">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul class="list-group list-unstyled">
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul class="list-group list-unstyled">
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separator">
+                            <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#localiCollapse" role="button" aria-expanded="false" aria-controls="localiCollapse">
+                                NOTIZIE LOCALI
+                            </a>
+                            <div class="collapse" id="localiCollapse">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul class="list-group list-unstyled">
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separator">
+                            <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#multimediaCollapse" role="button" aria-expanded="false" aria-controls="multimediaCollapse">
+                                MULTIMEDIA
+                            </a>
+                            <div class="collapse" id="multimediaCollapse">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul class="list-group list-unstyled">
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separator">
+                            <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#serviziCollapse" role="button" aria-expanded="false" aria-controls="serviziCollapse">
+                                SERVIZI
+                            </a>
+                            <div class="collapse" id="serviziCollapse">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul class="list-group list-unstyled">
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="row my-3 z-1 align-items-center" id="header-bottom">
+                <div class="row align-items-center" id="header-bottom">
                     <div class="col-md-3 text-start" id="header-bottom-left">
                         <div class="d-flex-inline" id="meteo">
                             <a href="#" class="text-reset text-decoration-none" title="meteo">
