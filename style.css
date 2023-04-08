@@ -197,25 +197,34 @@
 }
 
 /*Header*/
-.fixed-header {
-    position: fixed;
-    transform: translateX(-50%);
-    left: 50%;
+header{
+    margin:8px 0;
+}
+.sticky-header {
+    position: sticky;
+    left: 0;
     top: 0;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
     width: 100%;
     z-index: 1000;
     background-color:white;
 }
-#header-top-center{
+#navbarToggleExternalContent {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 16px;
+}
+#header-top{
     min-height:48px;
 }
 #no-title-section{
     padding-bottom:19.188px
 }
 #searchBar{
-    margin-left: 32px;
-    width:75%;
+    padding-left: 32px;
+    width:100%;
     padding-right: 32px;
 }
 #searchIcon{
@@ -241,11 +250,34 @@
     font-weight: bold;
     padding: 4px 16px;
 }
+#logSubButtons button{
+    margin:0 3px;
+    color:white;
+    font-weight:bold;
+    font-size:10px;
+    padding:8px 24px;
+    border: 0;
+}
+#brand-list{
+    padding:0 12px;
+    border-bottom:0;
+    border-top:0;
+    border-right:0;
+    border-left:1px;
+    border-style: solid;
+    border-color: #e5e5e5;
+    margin-left: 32px;
+}
 #header-fixed-title img{
     height:3rem;
 }
 #dropdownMenu1{
     min-width:140px;
+}
+.smartButton{
+    background-color:transparent;
+    border: 0;
+    padding:8px;
 }
 
 /*basic modifiers*/

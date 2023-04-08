@@ -16,8 +16,22 @@
             $(document).ready(function(){
                 $("#header-top-center > div").hide();
 
+                if ($(window).outerWidth() < 1400) {
+                    $("#logSubButtons").hide();
+                    $("#userButton").show();
+                }else{
+                    $("#logSubButtons").show();
+                    $("#userButton").hide();
+                }
+
+                if ($(window).outerWidth() < 992) {
+                    $("#brand-list").hide();
+                }else{
+                    $("#brand-list").show();
+                }
+
                 $("#three-lines-nav").click(function(){
-                    if($(window).scrollTop()<$("header").outerHeight(true)) {
+                    if($(window).scrollTop()<$("header").outerHeight(true) && $(window).outerWidth()>768) {
                         $("#header-fixed-list").toggle();
                         $("#header-fixed-title").toggle();
                     }
@@ -29,9 +43,13 @@
                 });
 
                 $("#searchBar").hover(function(){
-                    $("#searchIcon").addClass("bg-body-tertiary")
+                    if($(window).outerWidth() > 992){
+                        $("#searchIcon").addClass("bg-body-tertiary")
+                    }
                 },function(){
-                    $("#searchIcon").removeClass("bg-body-tertiary")
+                    if($(window).outerWidth() > 992){
+                        $("#searchIcon").removeClass("bg-body-tertiary")
+                    }
                 })
 
                 $("#searchInput").focus(function(){
@@ -45,14 +63,69 @@
                 })
 
                 $(window).scroll(function(){
-                    if($(window).scrollTop()>$("header").outerHeight(true)) {
-                        $("header").addClass("fixed-header")
+                    if($(window).outerWidth()>768) {
+                        if ($(window).scrollTop() > $("header").outerHeight(true)) {
+                            $("header").addClass("sticky-header")
+                            $("#header-bottom").hide();
+                            $("#header-navbar").hide();
+                            $("#header-fixed-list").hide();
+                            $("#header-fixed-title").show();
+                        } else {
+                            $("header").removeClass("sticky-header")
+                            $("#header-bottom").show();
+                            $("#header-navbar").show();
+                            if (fixListOn) {
+                                $("#header-fixed-list").show();
+                                $("#header-fixed-title").hide();
+                            } else {
+                                $("#header-fixed-list").hide();
+                                $("#header-fixed-title").show();
+                            }
+                        }
+                    }
+                })
+
+                $(window).on('resize', function(){
+                    var win = $(this);
+                    if (win.outerWidth() < 1400) {
+                        $("#logSubButtons").hide();
+                        $("#userButton").show();
+                    }else{
+                        $("#logSubButtons").show();
+                        $("#userButton").hide();
+                    }
+                    if(win.outerWidth()<1200){
+                        $("#searchIcon").hide();
+                        $("#searchInput").css({"border":"1px","border-style":"solid"});
+                        $("#searchButton").show();
+                    }
+                    else{
+                        $("#searchIcon").show();
+                        $("#searchInput").css({"border":"","border-style":""});
+                        $("#searchButton").hide();
+                    }
+                    if (win.outerWidth() < 992) {
+                        $("#brand-list").hide();
+                        $("#searchBar").prependTo("#navbarToggleExternalContent");
+                        $("#searchBar").addClass("spaceSeparator separator")
+                        $("#searchIcon").show();
+                        $("#searchIcon").addClass("bg-body-tertiary")
+                        $("#searchButton").hide();
+                    }else{
+                        $("#brand-list").show();
+                        $("#searchBar").appendTo("#header-top-left");
+                        $("#searchBar").removeClass("spaceSeparator separator")
+                        $("#searchIcon").removeClass("bg-body-tertiary")
+                        $("#searchButton").show();
+                    }
+                    if(win.outerWidth()<768){
+                        $("header").addClass("sticky-header")
                         $("#header-bottom").hide();
                         $("#header-navbar").hide();
                         $("#header-fixed-list").hide();
                         $("#header-fixed-title").show();
-                    } else {
-                        $("header").removeClass("fixed-header")
+                    }else{
+                        $("header").removeClass("sticky-header")
                         $("#header-bottom").show();
                         $("#header-navbar").show();
                         if(fixListOn) {
@@ -63,7 +136,7 @@
                             $("#header-fixed-title").show();
                         }
                     }
-                })
+                });
             });
         </script>
 
@@ -76,19 +149,19 @@
     </head>
     <body>
         <header>
-            <div class="container" id="header-top">
-                <div class="row text-center justify-content-between align-items-center my-1">
-                    <div class="col-4 d-inline-flex justify-content-start align-items-center" id="header-top-left">
-                            <button type="button" class="bg-transparent border border-0" id="three-lines-nav" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <i class="fa-solid fa-bars-staggered"></i>
-                            </button>
-                            <div class="input-group" id="searchBar">
-                                <button type="text" id="searchIcon"><i class="fas fa-search"></i></button>
-                                <input type="search" class="form-control" id="searchInput" placeholder="Cerca" aria-label="Cerca" aria-describedby="cerca-addon">
-                                <button type="button" class="bg-prim" id="searchButton">Cerca</button>
-                            </div>
+            <div class="container">
+                <div class="row text-center justify-content-between align-items-center" id="header-top">
+                    <div class="col-md-4 col-3 d-inline-flex justify-content-start align-items-center" id="header-top-left">
+                        <button type="button" class="smartButton" id="three-lines-nav" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fa-solid fa-bars-staggered fa-lg"></i>
+                        </button>
+                        <div class="input-group" id="searchBar">
+                            <button type="text" id="searchIcon"><i class="fas fa-search"></i></button>
+                            <input type="search" class="form-control" id="searchInput" placeholder="Cerca" aria-label="Cerca" aria-describedby="cerca-addon">
+                            <button type="button" class="bg-prim" id="searchButton">Cerca</button>
+                        </div>
                     </div>
-                    <div class="col-4 d-inline-flex justify-content-center align-items-center" id="header-top-center">
+                    <div class="col-md-4 col-6 d-inline-flex justify-content-center align-items-center" id="header-top-center">
                         <ul class="list-group list-group-horizontal list-unstyled justify-content-center flex-wrap" id="header-fixed-list">
                             <li class="mx-2"><a class="text-reset text-decoration-none fw-bold fs-11px" href="#" title="Elezioni Friuli Venezia Giulia">Elezioni Friuli</a></li>
                             <li class="mx-2"><a class="text-reset text-decoration-none fw-bold fs-11px" href="#" title="Gf Vip finale">Gf Vip finale</a></li>
@@ -96,31 +169,34 @@
                             <li class="mx-2"><a class="text-reset text-decoration-none fw-bold fs-11px" href="#" title="Liceo made in italy">Liceo made in italy</a></li>
                         </ul>
                         <div id="header-fixed-title">
-                            <a href="https://www.ilmessaggero.it" title="Il messaggero"><img src="immagini/Logo/MessaggeroLogo.svg"></a>
+                            <a href="https://www.ilmessaggero.it" title="Il messaggero"><img src="immagini/Logo/MessaggeroLogo.svg" class="img-fluid"></a>
                         </div>
                     </div>
-                    <div class="col-4 d-inline-flex justify-content-end align-items-center" id="header-top-right">
-                        <div class="row d-inline-flex align-items-center">
-                            <div class="col-7">
-                                <button type="button" class="bg-prim border border-0 text-white fw-bold py-2 px-4 fs-10px" id="abbonati-button">ABBONATI</button>
-                                <button type="button" class="bg-prim-subtle border border-0 text-white fw-bold py-2 px-4 fs-10px" id="accedi-button">ACCEDI</button>
-                            </div>
-                            <div class="col-1"></div>
-                            <div class="col-4 border-start">
-                                <ul class="list-group list-group-horizontal list-unstyled" id="brand-list">
-                                    <li class="m-1"><a href="#" class="text-reset text-decoration-none" title="facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li class="m-1"><a href="#" class="text-reset text-decoration-none" title="twitter"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li class="m-1"><a href="#" class="text-reset text-decoration-none" title="youtube"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li class="m-1"><a href="#" class="text-reset text-decoration-none" title="instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li class="m-1"><a href="#" class="text-reset text-decoration-none" title="telegram"><i class="fa-brands fa-telegram"></i></a></li>
-                                </ul>
-                            </div>
+                    <div class="col-md-4 col-3 d-inline-flex justify-content-end align-items-center" id="header-top-right">
+                        <div id="logSubButtons">
+                            <button type="button" class="bg-prim" id="abbonati-button">ABBONATI</button>
+                            <button type="button" class="bg-prim-subtle" id="accedi-button">ACCEDI</button>
+                        </div>
+                        <div id="userButton">
+                            <button type="button" class="smartButton">
+                                <i class="fa-regular fa-user fa-lg"></i>
+                            </button>
+                        </div>
+                        <div id="brand-list">
+                            <ul class="list-group list-group-horizontal list-unstyled">
+                                <li class="m-1"><a href="#" class="text-reset text-decoration-none" title="facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li class="m-1"><a href="#" class="text-reset text-decoration-none" title="twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li class="m-1"><a href="#" class="text-reset text-decoration-none" title="youtube"><i class="fa-brands fa-youtube"></i></a></li>
+                                <li class="m-1"><a href="#" class="text-reset text-decoration-none" title="instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li class="m-1"><a href="#" class="text-reset text-decoration-none" title="telegram"><i class="fa-brands fa-telegram"></i></a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="collapse position-absolute bg-white container" id="navbarToggleExternalContent">
+
+                <div class="collapse bg-white container" id="navbarToggleExternalContent">
                     <div class="row">
-                        <div class="col-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                             <div class="fs-14px fw-bold mb-2">SEZIONI</div>
                             <ul class="list-group list-unstyled">
                                 <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
@@ -130,7 +206,7 @@
                                 <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
                             </ul>
                         </div>
-                        <div class="col-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                             <div class="fs-14px fw-bold mb-2" id="no-title-section"></div>
                             <ul class="list-group list-unstyled">
                                 <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
@@ -140,7 +216,7 @@
                                 <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
                             </ul>
                         </div>
-                        <div class="col-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                             <div class="fs-14px fw-bold mb-2">EDIZIONI LOCALI</div>
                             <ul class="list-group list-unstyled">
                                 <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
@@ -150,7 +226,7 @@
                                 <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
                             </ul>
                         </div>
-                        <div class="col-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                             <div class="fs-14px fw-bold mb-2">MULTIMEDIA</div>
                             <ul class="list-group list-unstyled">
                                 <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
@@ -160,7 +236,7 @@
                                 <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
                             </ul>
                         </div>
-                        <div class="col-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                             <div class="fs-14px fw-bold mb-2">SERVIZI</div>
                             <ul class="list-group list-unstyled">
                                 <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
@@ -170,7 +246,7 @@
                                 <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
                             </ul>
                         </div>
-                        <div class="col-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                             <div class="fs-14px fw-bold mb-2">NETWORK</div>
                             <ul class="list-group list-unstyled">
                                 <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
@@ -182,11 +258,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="container" id="header-bottom">
-                <div class="row my-3 align-items-center">
-                    <div class="col-3 text-start" id="header-bottom-left">
+                <div class="row my-3 z-1 align-items-center" id="header-bottom">
+                    <div class="col-md-3 text-start" id="header-bottom-left">
                         <div class="d-flex-inline" id="meteo">
                             <a href="#" class="text-reset text-decoration-none" title="meteo">
                                 <span class="fs-10px mx-1" id="day">mer 15 aprile</span>
@@ -196,8 +270,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 text-center" id="header-bottom-center"><img src="immagini/Logo/MessaggeroLogo.svg" width="57%"></div>
-                    <div class="col-3 text-end" id="header-bottom-right">
+                    <div class="col-md-6 text-center" id="header-bottom-center"><img src="immagini/Logo/MessaggeroLogo.svg" class="img-fluid"></div>
+                    <div class="col-md-3 text-end" id="header-bottom-right">
                         <div class="d-flex align-items-center justify-content-end" id="zodiacale">
                             <div class="fs-11px" id="zodiacDescription">
                                 <div class="fw-bold" id="zodiacName">Ariete</div>
@@ -207,11 +281,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="container" id="header-navbar">
-                <nav class="nav nav-fill border-top border-bottom fs-11px">
-                    <a class="nav-link text-reset text-decoration-none text-start fw-bold active" aria-current="page" href="#">POLITICA</a>
+                <nav class="nav nav-fill border-top border-bottom fs-11px" id="header-navbar">
+                    <a class="nav-link text-reset text-decoration-none fw-bold active" aria-current="page" href="#">POLITICA</a>
                     <a class="nav-link text-reset text-decoration-none fw-bold" href="#">ITALIA</a>
                     <a class="nav-link text-reset text-decoration-none fw-bold" href="#">SPORT</a>
                     <a class="nav-link text-reset text-decoration-none fw-bold" href="#">MONDO</a>
@@ -241,7 +313,8 @@
             </div>
         </header>
 
-        <div class="container">
+        <section id="mainContent">
+            <div class="container">
 
                 <div class="space partition">
                     <article class="type-4 normal img100h fullscreen">
@@ -665,7 +738,7 @@
                                             <h4>METEO</h4>
                                         </a>
                                     </span>
-                                        <span class="endArtHeader">
+                                    <span class="endArtHeader">
                                         <a href="#" title="#" class="text-reset text-decoration-none">
                                             <span>TUTTI GLI ARTICOLI</span>
                                         </a>
@@ -791,7 +864,7 @@
                                             <h4>METEO</h4>
                                         </a>
                                     </span>
-                                        <span class="endArtHeader">
+                                    <span class="endArtHeader">
                                     </span>
                                 </div>
                                 <div class="row">
@@ -1415,7 +1488,7 @@
                                     <h6>PODCAST</h6>
                                 </a>
                             </span>
-                                <span class="endArtHeader">
+                            <span class="endArtHeader">
                             </span>
                         </div>
                         <div class="row spaceDivs">
@@ -1714,27 +1787,30 @@
                     di mezzo
                 </div>
 
-        </div>
+            </div>
+        </section>
 
         <footer>
-            <!--Footer head-->
-            <div>
-                <div class="row">
-                    <div class="col">Il messaggero</div>
-                    <div class="col text-end">ancora</div>
+            <div class="container">
+                <!--Footer head-->
+                <div>
+                    <div class="row">
+                        <div class="col">Il messaggero</div>
+                        <div class="col text-end">ancora</div>
+                    </div>
                 </div>
+                <!--Footer mid-->
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-2"></div>
+                    <div class="col-2"></div>
+                    <div class="col-2"></div>
+                    <div class="col-2"></div>
+                    <div class="col-2"></div>
+                </div>
+                <div></div>
+                <!--Footer end-->
+                <div class="border border-top-1">fdgdfgfd</div>
             </div>
-            <!--Footer mid-->
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col-2"></div>
-                <div class="col-2"></div>
-                <div class="col-2"></div>
-                <div class="col-2"></div>
-                <div class="col-2"></div>
-            </div>
-            <div></div>
-            <!--Footer end-->
-            <div class="border border-top-1">fdgdfgfd</div>
         </footer>
     </body>
