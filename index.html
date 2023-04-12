@@ -24,7 +24,7 @@
                     $("#logSubButtons").show();
                     $("#userButton").hide();
                 }
-                if(win.outerWidth() < 1200){
+                if(win.outerWidth()<1200){
                     $("#searchIcon").hide();
                     $("#searchInput").css({"border":"1px","border-style":"solid"});
                     $("#searchButton").show();
@@ -37,29 +37,33 @@
                 if (win.outerWidth() < 992) {
                     $("#brand-list").hide();
                     $("#searchBar").prependTo("#threeLinesNavContent");
-                    $("#searchBar").addClass("spaceSeparator separator")
+                    $("#searchBar").addClass("spaceSeparator separator");
                     $("#searchIcon").show();
-                    $("#searchIcon").addClass("bg-body-tertiary")
+                    $("#searchIcon").addClass("bg-body-tertiary");
                     $("#searchButton").hide();
                 }else{
                     $("#brand-list").show();
                     $("#searchBar").appendTo("#header-top-left");
-                    $("#searchBar").removeClass("spaceSeparator separator")
-                    $("#searchIcon").removeClass("bg-body-tertiary")
+                    $("#searchBar").removeClass("spaceSeparator separator");
+                    $("#searchIcon").removeClass("bg-body-tertiary");
                 }
-                if(win.outerWidth() < 768){
+                if(win.outerWidth()<768){
                     $("#header-bottom").hide();
                     $("#header-navbar").hide();
+                    $("#header-fixed-list").prependTo("#header-top");
+                    $("#header-fixed-list").addClass("smartHeaderFixedList separator");
+                    $("#header-fixed-title").show();
                     $("#smartNav").show();
                     $("#pcNav").hide();
-                    $("#threeLinesNavContent").addClass("threeLinesNavSmartContent container-fluid")
-                    $("#threeLinesNavContent").removeClass("container")
-                    $("#header-fixed-list").hide();
-                    $("#header-fixed-title").show();
+                    $("#threeLinesNavContent").addClass("threeLinesNavSmartContent container-fluid");
+                    $("#threeLinesNavContent").removeClass("container");
+                    $("#main-top").hide();
                 }else{
                     if(stickyOn==false){
                         $("#header-bottom").show();
                         $("#header-navbar").show();
+                        $("#header-fixed-list").prependTo("#header-top-center");
+                        $("#header-fixed-list").removeClass("smartHeaderFixedList separator");
                         if(fixListOn) {
                             $("#header-fixed-list").show();
                             $("#header-fixed-title").hide();
@@ -70,8 +74,9 @@
                     }
                     $("#smartNav").hide();
                     $("#pcNav").show();
-                    $("#threeLinesNavContent").removeClass("threeLinesNavSmartContent container-fluid")
-                    $("#threeLinesNavContent").addClass("container")
+                    $("#threeLinesNavContent").removeClass("threeLinesNavSmartContent container-fluid");
+                    $("#threeLinesNavContent").addClass("container");
+                    $("#main-top").show();
                 }
 
                 $("#three-lines-nav").click(function(){
@@ -153,29 +158,33 @@
                     if (win.outerWidth() < 992) {
                         $("#brand-list").hide();
                         $("#searchBar").prependTo("#threeLinesNavContent");
-                        $("#searchBar").addClass("spaceSeparator separator")
+                        $("#searchBar").addClass("spaceSeparator separator");
                         $("#searchIcon").show();
-                        $("#searchIcon").addClass("bg-body-tertiary")
+                        $("#searchIcon").addClass("bg-body-tertiary");
                         $("#searchButton").hide();
                     }else{
                         $("#brand-list").show();
                         $("#searchBar").appendTo("#header-top-left");
-                        $("#searchBar").removeClass("spaceSeparator separator")
-                        $("#searchIcon").removeClass("bg-body-tertiary")
+                        $("#searchBar").removeClass("spaceSeparator separator");
+                        $("#searchIcon").removeClass("bg-body-tertiary");
                     }
                     if(win.outerWidth()<768){
                         $("#header-bottom").hide();
                         $("#header-navbar").hide();
+                        $("#header-fixed-list").prependTo("#header-top");
+                        $("#header-fixed-list").addClass("smartHeaderFixedList separator");
+                        $("#header-fixed-title").show();
                         $("#smartNav").show();
                         $("#pcNav").hide();
-                        $("#threeLinesNavContent").addClass("threeLinesNavSmartContent container-fluid")
-                        $("#threeLinesNavContent").removeClass("container")
-                        $("#header-fixed-list").hide();
-                        $("#header-fixed-title").show();
+                        $("#threeLinesNavContent").addClass("threeLinesNavSmartContent container-fluid");
+                        $("#threeLinesNavContent").removeClass("container");
+                        $("#main-top").hide();
                     }else{
                         if(stickyOn==false){
                             $("#header-bottom").show();
                             $("#header-navbar").show();
+                            $("#header-fixed-list").prependTo("#header-top-center");
+                            $("#header-fixed-list").removeClass("smartHeaderFixedList separator");
                             if(fixListOn) {
                                 $("#header-fixed-list").show();
                                 $("#header-fixed-title").hide();
@@ -186,8 +195,9 @@
                         }
                         $("#smartNav").hide();
                         $("#pcNav").show();
-                        $("#threeLinesNavContent").removeClass("threeLinesNavSmartContent container-fluid")
-                        $("#threeLinesNavContent").addClass("container")
+                        $("#threeLinesNavContent").removeClass("threeLinesNavSmartContent container-fluid");
+                        $("#threeLinesNavContent").addClass("container");
+                        $("#main-top").show();
                     }
                 });
             });
@@ -249,64 +259,89 @@
 
                 <div class="collapse bg-white container" id="threeLinesNavContent">
                     <div class="row" id="pcNav">
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
                             <div class="fs-14px fw-bold mb-2">SEZIONI</div>
-                            <ul class="list-group list-unstyled">
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                            <ul class="list-group list-unstyled mx-2">
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Persone</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Italia</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Mondo</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Economia</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Politica</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Salute</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Schede</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Sport</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Spettacoli</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Donna</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Vaticano</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Motori</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Obbligati a crescere</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Gossip</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Blog</a></li>
                             </ul>
                         </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
                             <div class="fs-14px fw-bold mb-2" id="no-title-section"></div>
-                            <ul class="list-group list-unstyled">
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                            <ul class="list-group list-unstyled mx-2">
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Social</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Animali</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Alimentazione</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Televisione</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Libri</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Scienza</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Tecnologia</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">PC</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Scuola</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Moda</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Viaggi</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Casa</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Ultimissime</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Partner</a></li>
                             </ul>
                         </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
                             <div class="fs-14px fw-bold mb-2">EDIZIONI LOCALI</div>
-                            <ul class="list-group list-unstyled">
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                            <ul class="list-group list-unstyled mx-2">
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Roma</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Viterbo</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Rieti</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Latina</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Frosinone</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Abruzzo</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Marche</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Umbria</a></li>
                             </ul>
                         </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
                             <div class="fs-14px fw-bold mb-2">MULTIMEDIA</div>
-                            <ul class="list-group list-unstyled">
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                            <ul class="list-group list-unstyled mx-2">
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Video</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Podcast</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Foto</a></li>
                             </ul>
                         </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
                             <div class="fs-14px fw-bold mb-2">SERVIZI</div>
-                            <ul class="list-group list-unstyled">
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                            <ul class="list-group list-unstyled mx-2">
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Smart City</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Meteo</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Oroscopo</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Sondaggi</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Abbonamento</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Necrologie</a></li>
                             </ul>
                         </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
                             <div class="fs-14px fw-bold mb-2">NETWORK</div>
-                            <ul class="list-group list-unstyled">
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                            <ul class="list-group list-unstyled mx-2">
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Il Mattino</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Corriere Adriatico</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Il Gazzettino</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Quotidiano di Puglia</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Leggo</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Caltagirone</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">editore</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">PIEMME</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none" title="#">Guida allo shopping</a></li>
                             </ul>
                         </div>
                     </div>
@@ -318,21 +353,40 @@
                             <div class="collapse" id="sezioniCollapse">
                                 <div class="row">
                                     <div class="col-6">
-                                        <ul class="list-group list-unstyled">
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                        <ul class="list-group list-unstyled mx-2">
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Persone</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Italia</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Mondo</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Economia</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Politica</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Salute</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Schede</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Sport</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Spettacoli</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Donna</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Vaticano</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Motori</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Obbligati a crescere</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Gossip</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Blog</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-6">
                                         <ul class="list-group list-unstyled">
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Social</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Animali</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Alimentazione</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Televisione</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Libri</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Scienza</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Tecnologia</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">PC</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Scuola</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Moda</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Viaggi</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Casa</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Ultimissime</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Partner</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -346,11 +400,14 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <ul class="list-group list-unstyled">
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Roma</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Viterbo</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Rieti</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Latina</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Frosinone</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Abruzzo</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Marche</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Umbria</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-6">
@@ -366,11 +423,9 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <ul class="list-group list-unstyled">
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Video</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Podcast</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Foto</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-6">
@@ -386,11 +441,12 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <ul class="list-group list-unstyled">
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
-                                            <li class="mx-2"><a href="#" class="text-reset text-decoration-none" title="#">blob</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Smart City</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Meteo</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Oroscopo</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Sondaggi</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Abbonamento</a></li>
+                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Necrologie</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-6">
@@ -458,7 +514,7 @@
         <section id="mainContent">
             <div class="container">
 
-                <div class="space partition">
+                <div class="space partition" id="main-top">
                     <article class="type-4 normal img100h fullscreen">
                         <div class="row spaceDivs">
                             <div class="col-lg-3 col-sm-6">
@@ -502,7 +558,7 @@
                 </div>
 
                 <!--Primo contenuto-->
-                <div class="row partition">
+                <div class="row partition" id="main-first">
                     <section class="col-lg-8" id="newsSection1">
                         <div class="space">
                             <article class="type-1 normal separator">
@@ -1171,11 +1227,224 @@
                         </div>
                     </section>
                     <aside class="col-lg-4" id="advSection1">
-                        Pubblicità
+                        <div class="space stickyAdv">
+                            <article class="type-myplay">
+                                <div class="spaceDivs">
+                                    <div id="myPlayLogo">
+                                        <a href="#" title="My Play"><img src="immagini/Logo/MyPlayLogo.jpg" class="object-fit-contain" height="60px"></a>
+                                    </div>
+                                    <div>
+                                        <figure>
+                                            <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="200px"></a>
+                                        </figure>
+                                        <div class="articleTitle-m">
+                                            <a href="#" title="#" class="text-reset text-decoration-none">
+                                                Firenze, due bambini di 6 anni scappano da scuola e prendono l'autobus. «Volevano andare a Roma»
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row separator">
+                                        <div class="col-4">
+                                            <figure>
+                                                <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="100px"></a>
+                                            </figure>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="articleTitle-s">
+                                                <a href="#" title="#" class="text-reset text-decoration-none">
+                                                    Firenze, due bambini di 6 anni scappano da scuola e prendono l'autobus. «Volevano andare a Roma»
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <figure>
+                                                <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="100px"></a>
+                                            </figure>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="articleTitle-s">
+                                                <a href="#" title="#" class="text-reset text-decoration-none">
+                                                    Firenze, due bambini di 6 anni scappano da scuola e prendono l'autobus. «Volevano andare a Roma»
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="type-social">
+                                <div class="spaceDivs little">
+                                    <div class="articleTitle-m">
+                                        Seguici sui nostri canali social
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <a href="#" class="text-reset text-decoration-none" title="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                            <span class="articleTitle-s">Facebook</span>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="#" class="text-reset text-decoration-none" title="twitter"><i class="fa-brands fa-twitter"></i></a>
+                                            <span class="articleTitle-s">Twitter</span>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="#" class="text-reset text-decoration-none" title="instagram"><i class="fa-brands fa-instagram"></i></a>
+                                            <span class="articleTitle-s">Instagram</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <figure>
+                                            <a href="#" title="#"><img src="immagini/ADV/tweetDirettore.jpg" class="object-fit-contain rounded-1" alt="..." width="100%" height="120px"></a>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="type-editor header-sides">
+                                <div class="articleHeader editor">
+                                    <span class="startArtHeader transparent">
+                                        COLPO D'OCCHIO
+                                    </span>
+                                    <span class="endArtHeader">
+                                    </span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="100px"></a>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="author">
+                                            <a href="#" title="#" class="text-reset text-decoration-none">FRANCESCO GRILLO</a>
+                                        </div>
+                                        <div class="articleTitle-s">
+                                            <a href="#" title="#" class="text-reset text-decoration-none">Lezioni di Storia / La politica degli opposti e la cultura dimenticata</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="type-6 collumn header-sides">
+                                <div>
+                                    <div class="articleHeader">
+                                        <span class="startArtHeader">
+                                            ZOOM
+                                        </span>
+                                        <span class="endArtHeader">
+                                        </span>
+                                    </div>
+                                    <div class="spaceDivs">
+                                        <div class="row separator">
+                                            <div class="col-6">
+                                                <figure>
+                                                    <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="120px"></a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="articleTitle-s">
+                                                    <a href="#" title="#" class="text-reset text-decoration-none">
+                                                        Firenze, due bambini di 6 anni scappano da scuola e prendono l'autobus. «Volevano andare a Roma»
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row separator">
+                                            <div class="col-6">
+                                                <figure>
+                                                    <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="120px"></a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="articleTitle-s">
+                                                    <a href="#" title="#" class="text-reset text-decoration-none">
+                                                        Firenze, due bambini di 6 anni scappano da scuola e prendono l'autobus. «Volevano andare a Roma»
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row separator">
+                                            <div class="col-6">
+                                                <figure>
+                                                    <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="120px"></a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="articleTitle-s">
+                                                    <a href="#" title="#" class="text-reset text-decoration-none">
+                                                        Firenze, due bambini di 6 anni scappano da scuola e prendono l'autobus. «Volevano andare a Roma»
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row separator">
+                                            <div class="col-6">
+                                                <figure>
+                                                    <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="120px"></a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="articleTitle-s">
+                                                    <a href="#" title="#" class="text-reset text-decoration-none">
+                                                        Firenze, due bambini di 6 anni scappano da scuola e prendono l'autobus. «Volevano andare a Roma»
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row separator">
+                                            <div class="col-6">
+                                                <figure>
+                                                    <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="120px"></a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="articleTitle-s">
+                                                    <a href="#" title="#" class="text-reset text-decoration-none">
+                                                        Firenze, due bambini di 6 anni scappano da scuola e prendono l'autobus. «Volevano andare a Roma»
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <figure>
+                                                    <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="120px"></a>
+                                                </figure>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="articleTitle-s">
+                                                    <a href="#" title="#" class="text-reset text-decoration-none">
+                                                        Firenze, due bambini di 6 anni scappano da scuola e prendono l'autobus. «Volevano andare a Roma»
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="type-editor header-sides">
+                                <div class="articleHeader editor">
+                                    <span class="startArtHeader transparent">
+                                        COLPO D'OCCHIO
+                                    </span>
+                                    <span class="endArtHeader">
+                                    </span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="100px"></a>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="author">
+                                            <a href="#" title="#" class="text-reset text-decoration-none">FRANCESCO GRILLO</a>
+                                        </div>
+                                        <div class="articleTitle-s">
+                                            <a href="#" title="#" class="text-reset text-decoration-none">Lezioni di Storia / La politica degli opposti e la cultura dimenticata</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
                     </aside>
                 </div>
                 <!--Primo contenuto end-->
-                <div class="space partition">
+                <div class="space partition" id="main-middle">
                     <article class="type-4 header-mid fullscreen">
                         <div class="midArticleHeader white">
                             <span>ECONOMIA</span>
@@ -1916,17 +2185,96 @@
                 </div>
 
                 <!--Secondo contenuto-->
-                <div class="row partition">
+                <div class="row partition" id="main-second">
                     <section class="col-8">
-                        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <div class="space">
+
+                        </div>
                     </section>
                     <aside class="col-4">
-                        Pubblicità
+                        <div class="space stickyAdv">
+
+                        </div>
                     </aside>
                 </div>
                 <!--Secondo contenuto end-->
-                <div class="space partition">
-                    di mezzo
+                <div class="space partition" id="main-bottom">
+                    <article class="type-3 header-mid">
+                        <div class="midArticleHeader blue">
+                            <span>POLITICA</span>
+                        </div>
+                        <div class="row spaceDivs">
+                            <div class="col-sm-4">
+                                <figure>
+                                    <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="220px"></a>
+                                </figure>
+                                <div class="articleTitle-s">
+                                    <a href="#" title="#" class="text-reset text-decoration-none">
+                                        Firenze, due bambini di 6 anni scappano da scuola e prendono l'autobus. «Volevano andare a Roma»
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <figure>
+                                    <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="220px"></a>
+                                </figure>
+                                <div class="articleTitle-s">
+                                    <a href="#" title="#" class="text-reset text-decoration-none">
+                                        Firenze, due bambini di 6 anni scappano da scuola e prendono l'autobus. «Volevano andare a Roma»
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <figure>
+                                    <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="220px"></a>
+                                </figure>
+                                <div class="articleTitle-s">
+                                    <a href="#" title="#" class="text-reset text-decoration-none">
+                                        Firenze, due bambini di 6 anni scappano da scuola e prendono l'autobus. «Volevano andare a Roma»
+                                    </a>
+                                </div>
+                                <div class="signature">di Marco Billi</div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="type-3 header-mid">
+                        <div class="midArticleHeader blue">
+                            <span>POLITICA</span>
+                        </div>
+                        <div class="row spaceDivs">
+                            <div class="col-sm-4">
+                                <figure>
+                                    <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="220px"></a>
+                                </figure>
+                                <div class="articleTitle-s">
+                                    <a href="#" title="#" class="text-reset text-decoration-none">
+                                        Firenze, due bambini di 6 anni scappano da scuola e prendono l'autobus. «Volevano andare a Roma»
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <figure>
+                                    <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="220px"></a>
+                                </figure>
+                                <div class="articleTitle-s">
+                                    <a href="#" title="#" class="text-reset text-decoration-none">
+                                        Firenze, due bambini di 6 anni scappano da scuola e prendono l'autobus. «Volevano andare a Roma»
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <figure>
+                                    <a href="#" title="#"><img src="immagini/Random/La_segnaletica_luminosa_e_la_barriera_di_un_passaggio_a_livello_automatico_di_tipo_italiano.jpg" class="object-fit-cover rounded-1" alt="..." width="100%" height="220px"></a>
+                                </figure>
+                                <div class="articleTitle-s">
+                                    <a href="#" title="#" class="text-reset text-decoration-none">
+                                        Firenze, due bambini di 6 anni scappano da scuola e prendono l'autobus. «Volevano andare a Roma»
+                                    </a>
+                                </div>
+                                <div class="signature">di Marco Billi</div>
+                            </div>
+                        </div>
+                    </article>
                 </div>
 
             </div>
