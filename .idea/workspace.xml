@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5560eb1-7815-49eb-a922-0c5f3f3083ea" name="Changes" comment="Rendere l'header responsive #2">
+    <list default="true" id="e5560eb1-7815-49eb-a922-0c5f3f3083ea" name="Changes" comment="implementare la parte Aside dei main content (rendendoli responsive e sticky) #1.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
@@ -87,7 +87,8 @@
       <workItem from="1680939590025" duration="19795000" />
       <workItem from="1680983523825" duration="11761000" />
       <workItem from="1681071030788" duration="2775000" />
-      <workItem from="1681307435510" duration="7655000" />
+      <workItem from="1681307435510" duration="7813000" />
+      <workItem from="1681376529774" duration="4077000" />
     </task>
     <task id="LOCAL-00001" summary="Implementazione css di Header e Nav #1">
       <created>1680548697085</created>
@@ -131,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680995524018</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="implementare la parte Aside dei main content (rendendoli responsive e sticky) #1.">
+      <created>1681315329491</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681315329491</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +162,7 @@
     <MESSAGE value="Implementazione html e css del corpo del sito #2&#10;Rendere gli article responsive #1" />
     <MESSAGE value="Rendere l'header responsive #1" />
     <MESSAGE value="Rendere l'header responsive #2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rendere l'header responsive #2" />
+    <MESSAGE value="implementare la parte Aside dei main content (rendendoli responsive e sticky) #1." />
+    <option name="LAST_COMMIT_MESSAGE" value="implementare la parte Aside dei main content (rendendoli responsive e sticky) #1." />
   </component>
 </project>

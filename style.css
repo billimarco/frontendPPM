@@ -144,12 +144,27 @@
     border-top: 1px solid;
     border-bottom: 1px solid;
 }
+.midArticleHeader.one-line::before{
+    height:0;
+    border-bottom:0px;
+}
+.midArticleHeader.one-line::after{
+    height:0;
+    border-bottom:0px;
+}
+.midArticleHeader.one-line span{
+    padding:0;
+}
 .midArticleHeader.prim{
     color:#b22222;
 }
 .midArticleHeader.prim span{
     color:white;
     background-color:#b22222;
+}
+.midArticleHeader.prim.one-line span{
+    color:#b22222;
+    background-color:white;
 }
 .midArticleHeader.black{
     color:black;
@@ -165,7 +180,14 @@
     color:black;
     background-color:white;
     border:1px;
-    border-style:solid
+    border-style:solid;
+}
+.midArticleHeader.yellow{
+    color:black;
+}
+.midArticleHeader.yellow span{
+    color:black;
+    background-color:yellow;
 }
 .midArticleHeader.blue{
     color:blue;
@@ -174,7 +196,7 @@
     color:white;
     background-color:blue;
     border:1px;
-    border-style:solid
+    border-style:solid;
 }
 
 /*article basics*/
@@ -183,6 +205,11 @@
     color: #b22222;
     font-weight: bold;
     margin: 0 0 8px 0;
+}
+.articleKeyword.yellow span{
+    color:black;
+    background-color:yellow;
+    padding: 3px;
 }
 .articleKeyword.live::before {
     content: "LIVE";
