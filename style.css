@@ -55,6 +55,17 @@
     border-style:solid;
     border-color: black;
 }
+.type-adv div{
+    padding:0 48px;
+    align-items: center;
+}
+.type-form{
+    border:1px;
+    border-color:#1c2e54;
+    border-style: solid;
+    margin-left:32px;
+    margin-right:32px;
+}
 
 /*articleHeader*/
 .articleHeader{
@@ -284,7 +295,46 @@
     margin-top: 8px;
     font-style: italic;
 }
-
+/*Form*/
+.form-title{
+    color: white;
+    background-color: #1c2e54;
+    font-weight: bold;
+    padding-top:16px;
+    padding-left:8px;
+    padding-right:8px;
+}
+.form-label{
+    font-size:0.750rem;
+}
+.form-select, .form-input{
+    padding:0 4px;
+    width:100%;
+    height:auto;
+    border:1px;
+    border-style:solid;
+    border-radius: 2px;
+    border-color: #aaaaaa;
+    vertical-align: middle;
+    display: inline-block;
+}
+.form-submit{
+    margin-top: 8px;
+}
+.form-submit input{
+    color: white;
+    background-color: #28427a;
+    font-weight: bold;
+    border-style: none;
+    padding: 6px 15px;
+}
+.asideForm > div{
+    padding-top:2px;
+    padding-bottom:2px;
+}
+.asideForm{
+    padding:0 12px;
+}
 /*Header*/
 .sticky-header {
     position: sticky;
@@ -383,12 +433,14 @@
     border: 0;
     padding:8px;
 }
+/*
 .smartHeaderFixedList{
     padding-left: 8px;
     padding-right: 8px;
     padding-bottom: 8px;
     align-items: center;
 }
+*/
 
 /*basic modifiers*/
 .bg-prim{
