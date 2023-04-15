@@ -347,7 +347,7 @@
     z-index: 1000;
     background-color:white;
 }
-#threeLinesNavContent{
+#three-lines-nav-content{
     position: absolute;
     left: 0;
     right: 0;
@@ -365,7 +365,7 @@
 #header-bottom{
     padding:8px 0;
 }
-#threeLinesNavContent ul li a{
+#three-lines-nav-content ul li a{
     display: block;
     font-size: 0.875rem;
     font-weight: 500;
@@ -459,10 +459,10 @@
     font-size: 0.875rem;
     font-weight: 600;
 }
-#footerNavContent{
+#footer-nav-content{
     padding:32px 0;
 }
-#footerNavContent ul li a{
+#footer-nav-content ul li a{
     display: block;
     font-size: 0.875rem;
     font-weight: 500;
@@ -471,6 +471,33 @@
     font-stretch: normal;
     font-style: normal;
     letter-spacing: normal;
+}
+#footer-fixed-list{
+    padding:16px 12px;
+}
+#footer-fixed-list ul li a{
+    letter-spacing: .83px;
+    font-size: 10px;
+    font-weight: bold;
+}
+.footer-fixed-list-separator li:after {
+    content: "|";
+    margin: 0 8px;
+    font-size: 10px;
+    font-weight: bold;
+}
+.footer-fixed-list-separator li:last-child:after {
+    content: "";
+    margin: 0 8px;
+}
+#footer-bottom{
+    padding: 16px 0;
+}
+#footer-fixed-info ul li a{
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 2.1;
+    padding: 0 14px;
 }
 /*basic modifiers*/
 .bg-prim{

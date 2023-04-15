@@ -36,7 +36,7 @@
                 }
                 if (win.outerWidth() < 992) {
                     $("#brand-list").hide();
-                    $("#searchBar").prependTo("#threeLinesNavContent");
+                    $("#searchBar").prependTo("#three-lines-nav-content");
                     $("#searchBar").addClass("spaceSeparator separator");
                     $("#searchIcon").show();
                     $("#searchIcon").addClass("bg-body-tertiary");
@@ -54,14 +54,20 @@
                     $("#header-fixed-title").show();
                     $(".smartNav").show();
                     $(".pcNav").hide();
-                    $("#threeLinesNavContent").addClass("threeLinesNavSmartContent container-fluid");
-                    $("#threeLinesNavContent").removeClass("container");
-                    $("#footer-top-title img").css({"height":"2rem"})
+                    $("#three-lines-nav-content").addClass("threeLinesNavSmartContent container-fluid");
+                    $("#three-lines-nav-content").removeClass("container");
+                    $("#footer-top").addClass("row");
+                    $("#footer-top > div").addClass("align-items-center text-center");
                     $("#footer-top-iva").removeClass("text-end");
                     $("#footer-top-iva").css({"font-size":"0.625rem"});
-                    $("#footer-top").addClass("align-items-center text-center");
-                    $("#footerNavContent").addClass("row");
-                    $("#footerNavContent").css({"border-top":"1px","border-top-style":"solid","border-color":"#ddd"});
+                    $("#footer-nav-content").addClass("row");
+                    $("#footer-nav-content").css({"border-top":"1px","border-top-style":"solid","border-color":"#ddd"});
+                    $("#footer-fixed-list").addClass("row");
+                    $("#footer-fixed-list").css({"background-color":"#f4f4f4"});
+                    $("#footer-fixed-list li").css({"padding":"4px"});
+                    $("#footer-fixed-list > nav").removeClass("footer-fixed-list-separator");
+                    $("#footer-bottom").addClass("row");
+                    $("#footer-bottom").css({"border-top":""});
                     $("#main-top").hide();
                 }else{
                     if(stickyOn==false){
@@ -77,14 +83,20 @@
                     }
                     $(".smartNav").hide();
                     $(".pcNav").show();
-                    $("#threeLinesNavContent").removeClass("threeLinesNavSmartContent container-fluid");
-                    $("#threeLinesNavContent").addClass("container");
-                    $("#footer-top-title img").css({"height":""})
+                    $("#three-lines-nav-content").removeClass("threeLinesNavSmartContent container-fluid");
+                    $("#three-lines-nav-content").addClass("container");
+                    $("#footer-top").removeClass("row");
+                    $("#footer-top > div").removeClass("align-items-center text-center");
                     $("#footer-top-iva").addClass("text-end");
                     $("#footer-top-iva").css({"font-size":""});
-                    $("#footer-top").removeClass("align-items-center text-center");
-                    $("#footerNavContent").removeClass("row");
-                    $("#footerNavContent").css({"border-top":"","border-top-style":"","border-color":""});
+                    $("#footer-nav-content").removeClass("row");
+                    $("#footer-nav-content").css({"border-top":"","border-top-style":"","border-color":""});
+                    $("#footer-fixed-list").removeClass("row");
+                    $("#footer-fixed-list").css({"background-color":""});
+                    $("#footer-fixed-list li").css({"padding":""});
+                    $("#footer-fixed-list > nav").addClass("footer-fixed-list-separator");
+                    $("#footer-bottom").removeClass("row");
+                    $("#footer-bottom").css({"border-top":"solid 1px black"});
                     $("#main-top").show();
                 }
 
@@ -166,7 +178,7 @@
                     }
                     if (win.outerWidth() < 992) {
                         $("#brand-list").hide();
-                        $("#searchBar").prependTo("#threeLinesNavContent");
+                        $("#searchBar").prependTo("#three-lines-nav-content");
                         $("#searchBar").addClass("spaceSeparator separator");
                         $("#searchIcon").show();
                         $("#searchIcon").addClass("bg-body-tertiary");
@@ -184,13 +196,20 @@
                         $("#header-fixed-title").show();
                         $(".smartNav").show();
                         $(".pcNav").hide();
-                        $("#threeLinesNavContent").addClass("threeLinesNavSmartContent container-fluid");
-                        $("#threeLinesNavContent").removeClass("container");
+                        $("#three-lines-nav-content").addClass("threeLinesNavSmartContent container-fluid");
+                        $("#three-lines-nav-content").removeClass("container");
+                        $("#footer-top").addClass("row");
+                        $("#footer-top > div").addClass("align-items-center text-center");
                         $("#footer-top-iva").removeClass("text-end");
                         $("#footer-top-iva").css({"font-size":"0.625rem"});
-                        $("#footer-top").addClass("align-items-center text-center");
-                        $("#footerNavContent").addClass("row");
-                        $("#footerNavContent").css({"border-top":"1px","border-top-style":"solid","border-color":"#ddd"});
+                        $("#footer-nav-content").addClass("row");
+                        $("#footer-nav-content").css({"border-top":"1px","border-top-style":"solid","border-color":"#ddd"});
+                        $("#footer-fixed-list").addClass("row");
+                        $("#footer-fixed-list").css({"background-color":"#f4f4f4"});
+                        $("#footer-fixed-list li").css({"padding":"4px"});
+                        $("#footer-fixed-list > nav").removeClass("footer-fixed-list-separator");
+                        $("#footer-bottom").addClass("row");
+                        $("#footer-bottom").css({"border-top":""});
                         $("#main-top").hide();
                     }else{
                         if(stickyOn==false){
@@ -206,13 +225,20 @@
                         }
                         $(".smartNav").hide();
                         $(".pcNav").show();
-                        $("#threeLinesNavContent").removeClass("threeLinesNavSmartContent container-fluid");
-                        $("#threeLinesNavContent").addClass("container");
+                        $("#three-lines-nav-content").removeClass("threeLinesNavSmartContent container-fluid");
+                        $("#three-lines-nav-content").addClass("container");
+                        $("#footer-top").removeClass("row");
+                        $("#footer-top > div").removeClass("align-items-center text-center");
                         $("#footer-top-iva").addClass("text-end");
                         $("#footer-top-iva").css({"font-size":""});
-                        $("#footer-top").removeClass("align-items-center text-center");
-                        $("#footerNavContent").removeClass("row");
-                        $("#footerNavContent").css({"border-top":"","border-top-style":"","border-color":""});
+                        $("#footer-nav-content").removeClass("row");
+                        $("#footer-nav-content").css({"border-top":"","border-top-style":"","border-color":""});
+                        $("#footer-fixed-list").removeClass("row");
+                        $("#footer-fixed-list").css({"background-color":""});
+                        $("#footer-fixed-list li").css({"padding":""});
+                        $("#footer-fixed-list > nav").addClass("footer-fixed-list-separator");
+                        $("#footer-bottom").removeClass("row");
+                        $("#footer-bottom").css({"border-top":"solid 1px black"});
                         $("#main-top").show();
                     }
                 });
@@ -227,11 +253,11 @@
         <title>Il messaggero</title>
     </head>
     <body>
-        <header class="">
+        <header>
             <div class="container">
                 <div class="row text-center justify-content-between align-items-center" id="header-top">
                     <div class="col-md-4 col-3 d-inline-flex justify-content-start align-items-center" id="header-top-left">
-                        <button type="button" class="smartButton" id="three-lines-nav" data-bs-toggle="collapse" data-bs-target="#threeLinesNavContent" aria-controls="threeLinesNavContent" aria-expanded="false" aria-label="threeLinesNavContent">
+                        <button type="button" class="smartButton" id="three-lines-nav" data-bs-toggle="collapse" data-bs-target="#three-lines-nav-content" aria-controls="three-lines-nav-content" aria-expanded="false" aria-label="three-lines-nav-content">
                             <i class="fa-solid fa-bars-staggered fa-lg"></i>
                         </button>
                         <div class="input-group" id="searchBar">
@@ -273,7 +299,7 @@
                     </div>
                 </div>
 
-                <div class="collapse bg-white container" id="threeLinesNavContent">
+                <div class="collapse bg-white container" id="three-lines-nav-content">
                     <div class="row pcNav">
                         <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
                             <div class="fs-14px fw-bold mb-2">SEZIONI</div>
@@ -3326,217 +3352,243 @@
         <footer>
             <div class="container">
                 <!--Footer head-->
-                <div class="row" id="footer-top">
-                    <div class="col-md-6" id="footer-top-title">
-                        <a href="https://www.ilmessaggero.it" title="Il messaggero"><img src="immagini/Logo/MessaggeroLogo.svg" class="img-fluid"></a>
-                    </div>
-                    <div class="col-md-6 text-end" id="footer-top-iva">
-                        © 2023 Il MESSAGGERO - C.F. e P. IVA 05629251009
+                <div id="footer-top">
+                    <div class="row">
+                        <div class="col-md-6" id="footer-top-title">
+                            <a href="https://www.ilmessaggero.it" title="Il messaggero"><img src="immagini/Logo/MessaggeroLogo.svg" class="img-fluid"></a>
+                        </div>
+                        <div class="col-md-6 text-end" id="footer-top-iva">
+                            © 2023 Il MESSAGGERO - C.F. e P. IVA 05629251009
+                        </div>
                     </div>
                 </div>
                 <!--Footer mid-->
-                <div id="footerNavContent">
-                    <div class="row pcNav">
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                            <div class="fs-14px fw-bold mb-2">SEZIONI</div>
-                            <ul class="list-group list-unstyled mx-2">
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Persone</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Italia</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Mondo</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Economia</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Politica</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Salute</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Schede</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Sport</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Spettacoli</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Donna</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Vaticano</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Motori</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Obbligati a crescere</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Gossip</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Blog</a></li>
-                            </ul>
+                <div id="footer-middle">
+                    <div id="footer-nav-content">
+                        <div class="row pcNav">
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
+                                <div class="fs-14px fw-bold mb-2">SEZIONI</div>
+                                <ul class="list-group list-unstyled mx-2">
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Persone</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Italia</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Mondo</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Economia</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Politica</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Salute</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Schede</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Sport</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Spettacoli</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Donna</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Vaticano</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Motori</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Obbligati a crescere</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Gossip</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Blog</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
+                                <div class="fs-14px fw-bold mb-2 no-title-section"></div>
+                                <ul class="list-group list-unstyled mx-2">
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Social</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Animali</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Alimentazione</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Televisione</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Libri</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Scienza</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Tecnologia</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">PC</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Scuola</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Moda</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Viaggi</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Casa</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Ultimissime</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Partner</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
+                                <div class="fs-14px fw-bold mb-2">EDIZIONI LOCALI</div>
+                                <ul class="list-group list-unstyled mx-2">
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Roma</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Viterbo</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Rieti</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Latina</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Frosinone</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Abruzzo</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Marche</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Umbria</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
+                                <div class="fs-14px fw-bold mb-2">MULTIMEDIA</div>
+                                <ul class="list-group list-unstyled mx-2">
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Video</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Podcast</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Foto</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
+                                <div class="fs-14px fw-bold mb-2">SERVIZI</div>
+                                <ul class="list-group list-unstyled mx-2">
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Smart City</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Meteo</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Oroscopo</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Sondaggi</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Abbonamento</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Necrologie</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
+                                <div class="fs-14px fw-bold mb-2">NETWORK</div>
+                                <ul class="list-group list-unstyled mx-2">
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Il Mattino</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Corriere Adriatico</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Il Gazzettino</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Quotidiano di Puglia</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Leggo</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Caltagirone</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">editore</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">PIEMME</a></li>
+                                    <li><a href="#" class="text-reset text-decoration-none" title="#">Guida allo shopping</a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                            <div class="fs-14px fw-bold mb-2 no-title-section"></div>
-                            <ul class="list-group list-unstyled mx-2">
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Social</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Animali</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Alimentazione</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Televisione</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Libri</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Scienza</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Tecnologia</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">PC</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Scuola</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Moda</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Viaggi</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Casa</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Ultimissime</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Partner</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                            <div class="fs-14px fw-bold mb-2">EDIZIONI LOCALI</div>
-                            <ul class="list-group list-unstyled mx-2">
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Roma</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Viterbo</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Rieti</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Latina</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Frosinone</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Abruzzo</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Marche</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Umbria</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                            <div class="fs-14px fw-bold mb-2">MULTIMEDIA</div>
-                            <ul class="list-group list-unstyled mx-2">
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Video</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Podcast</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Foto</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                            <div class="fs-14px fw-bold mb-2">SERVIZI</div>
-                            <ul class="list-group list-unstyled mx-2">
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Smart City</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Meteo</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Oroscopo</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Sondaggi</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Abbonamento</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Necrologie</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                            <div class="fs-14px fw-bold mb-2">NETWORK</div>
-                            <ul class="list-group list-unstyled mx-2">
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Il Mattino</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Corriere Adriatico</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Il Gazzettino</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Quotidiano di Puglia</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Leggo</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Caltagirone</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">editore</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">PIEMME</a></li>
-                                <li><a href="#" class="text-reset text-decoration-none" title="#">Guida allo shopping</a></li>
-                            </ul>
+                        <div class="spaceDivs smartNav">
+                            <div class="separator">
+                                <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#sezioniCollapse2" role="button" aria-expanded="false" aria-controls="sezioniCollapse2">
+                                    SEZIONI
+                                </a>
+                                <div class="collapse" id="sezioniCollapse2">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <ul class="list-group list-unstyled mx-2">
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Persone</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Italia</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Mondo</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Economia</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Politica</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Salute</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Schede</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Sport</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Spettacoli</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Donna</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Vaticano</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Motori</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Obbligati a crescere</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Gossip</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Blog</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-6">
+                                            <ul class="list-group list-unstyled">
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Social</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Animali</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Alimentazione</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Televisione</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Libri</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Scienza</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Tecnologia</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">PC</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Scuola</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Moda</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Viaggi</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Casa</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Ultimissime</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Partner</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="separator">
+                                <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#localiCollapse2" role="button" aria-expanded="false" aria-controls="localiCollapse2">
+                                    NOTIZIE LOCALI
+                                </a>
+                                <div class="collapse" id="localiCollapse2" >
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <ul class="list-group list-unstyled">
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Roma</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Viterbo</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Rieti</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Latina</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Frosinone</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Abruzzo</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Marche</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Umbria</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-6">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="separator">
+                                <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#multimediaCollapse2" role="button" aria-expanded="false" aria-controls="multimediaCollapse2">
+                                    MULTIMEDIA
+                                </a>
+                                <div class="collapse" id="multimediaCollapse2">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <ul class="list-group list-unstyled">
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Video</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Podcast</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Foto</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-6">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="separator">
+                                <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#serviziCollapse2" role="button" aria-expanded="false" aria-controls="serviziCollapse2">
+                                    SERVIZI
+                                </a>
+                                <div class="collapse" id="serviziCollapse2">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <ul class="list-group list-unstyled">
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Smart City</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Meteo</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Oroscopo</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Sondaggi</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Abbonamento</a></li>
+                                                <li><a href="#" class="text-reset text-decoration-none" title="#">Necrologie</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-6">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="spaceDivs smartNav">
-                        <div class="separator">
-                            <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#sezioniCollapse2" role="button" aria-expanded="false" aria-controls="sezioniCollapse2">
-                                SEZIONI
-                            </a>
-                            <div class="collapse" id="sezioniCollapse2">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <ul class="list-group list-unstyled mx-2">
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Persone</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Italia</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Mondo</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Economia</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Politica</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Salute</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Schede</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Sport</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Spettacoli</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Donna</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Vaticano</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Motori</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Obbligati a crescere</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Gossip</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Blog</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-6">
-                                        <ul class="list-group list-unstyled">
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Social</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Animali</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Alimentazione</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Televisione</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Libri</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Scienza</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Tecnologia</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">PC</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Scuola</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Moda</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Viaggi</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Casa</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Ultimissime</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Partner</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="separator">
-                            <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#localiCollapse2" role="button" aria-expanded="false" aria-controls="localiCollapse2">
-                                NOTIZIE LOCALI
-                            </a>
-                            <div class="collapse" id="localiCollapse2" >
-                                <div class="row">
-                                    <div class="col-6">
-                                        <ul class="list-group list-unstyled">
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Roma</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Viterbo</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Rieti</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Latina</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Frosinone</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Abruzzo</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Marche</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Umbria</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-6">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="separator">
-                            <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#multimediaCollapse2" role="button" aria-expanded="false" aria-controls="multimediaCollapse2">
-                                MULTIMEDIA
-                            </a>
-                            <div class="collapse" id="multimediaCollapse2">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <ul class="list-group list-unstyled">
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Video</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Podcast</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Foto</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-6">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="separator">
-                            <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#serviziCollapse2" role="button" aria-expanded="false" aria-controls="serviziCollapse2">
-                                SERVIZI
-                            </a>
-                            <div class="collapse" id="serviziCollapse2">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <ul class="list-group list-unstyled">
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Smart City</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Meteo</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Oroscopo</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Sondaggi</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Abbonamento</a></li>
-                                            <li><a href="#" class="text-reset text-decoration-none" title="#">Necrologie</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-6">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="footer-fixed-list">
+                        <nav>
+                            <ul class="list-group list-group-horizontal list-unstyled justify-content-center flex-wrap">
+                                <li><a class="text-reset text-decoration-none" href="#" title="CALTAGIRONE EDITORE">CALTAGIRONE EDITORE</a></li>
+                                <li><a class="text-reset text-decoration-none" href="#" title="IL MATTINO">IL MATTINO</a></li>
+                                <li><a class="text-reset text-decoration-none" href="#" title="CORRIERE ADRIATICO">CORRIERE ADRIATICO</a></li>
+                                <li><a class="text-reset text-decoration-none" href="#" title="IL GAZZETTINO">IL GAZZETTINO</a></li>
+                                <li><a class="text-reset text-decoration-none" href="#" title="QUOTIDIANO DI PUGLIA">QUOTIDIANO DI PUGLIA</a></li>
+                                <li><a class="text-reset text-decoration-none" href="#" title="LEGGO">LEGGO</a></li>
+                                <li><a class="text-reset text-decoration-none" href="#" title="PUBBLICITÀ">PUBBLICITÀ</a></li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
                 <!--Footer end-->
-                <div></div>
-                <div class="border border-top-1">fdgdfgfd</div>
+                <div id="footer-bottom">
+                    <nav id="footer-fixed-info">
+                        <ul class="list-group list-group-horizontal list-unstyled justify-content-center flex-wrap">
+                            <li><a class="text-reset text-decoration-none" href="#" title="CONTATTI">CONTATTI</a></li>
+                            <li><a class="text-reset text-decoration-none" href="#" title="INFORMAZIONI LEGALI">INFORMAZIONI LEGALI</a></li>
+                            <li><a class="text-reset text-decoration-none" href="#" title="Privacy Policy">Privacy Policy</a></li>
+                            <li><a class="text-reset text-decoration-none" href="#" title="Cookie Policy">Cookie Policy</a></li>
+                            <li><a class="text-reset text-decoration-none" href="#" title="Preferenze cookie">Preferenze cookie</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </footer>
     </body>
