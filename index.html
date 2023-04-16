@@ -7,256 +7,22 @@
         <meta name="author" content="Marco Billi">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://kit.fontawesome.com/8ca2ea010b.js" crossorigin="anonymous"></script>
-
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-        <script>
-            $(document).ready(function(){
-                let fixListOn=true;
-                let stickyOn=false;
-                let win = $(window);
-
-                if (win.outerWidth() < 1400) {
-                    $("#logSubButtons").hide();
-                    $("#userButton").show();
-                }else{
-                    $("#logSubButtons").show();
-                    $("#userButton").hide();
-                }
-                if(win.outerWidth()<1200){
-                    $("#searchIcon").hide();
-                    $("#searchInput").css({"border":"1px","border-style":"solid"});
-                    $("#searchButton").show();
-                }
-                else{
-                    $("#searchIcon").show();
-                    $("#searchInput").css({"border":"","border-style":""});
-                    $("#searchButton").hide();
-                }
-                if (win.outerWidth() < 992) {
-                    $("#brand-list").hide();
-                    $("#searchBar").prependTo("#three-lines-nav-content");
-                    $("#searchBar").addClass("spaceSeparator separator");
-                    $("#searchIcon").show();
-                    $("#searchIcon").addClass("bg-body-tertiary");
-                    $("#searchButton").hide();
-                }else{
-                    $("#brand-list").show();
-                    $("#searchBar").appendTo("#header-top-left");
-                    $("#searchBar").removeClass("spaceSeparator separator");
-                    $("#searchIcon").removeClass("bg-body-tertiary");
-                }
-                if(win.outerWidth()<768){
-                    $("#header-bottom").hide();
-                    $("#header-navbar").hide();
-                    $("#header-fixed-list").hide();
-                    $("#header-fixed-title").show();
-                    $(".smartNav").show();
-                    $(".pcNav").hide();
-                    $("#three-lines-nav-content").addClass("threeLinesNavSmartContent container-fluid");
-                    $("#three-lines-nav-content").removeClass("container");
-                    $("#footer-top").addClass("row");
-                    $("#footer-top > div").addClass("align-items-center text-center");
-                    $("#footer-top-iva").removeClass("text-end");
-                    $("#footer-top-iva").css({"font-size":"0.625rem"});
-                    $("#footer-nav-content").addClass("row");
-                    $("#footer-nav-content").css({"border-top":"1px","border-top-style":"solid","border-color":"#ddd"});
-                    $("#footer-fixed-list").addClass("row");
-                    $("#footer-fixed-list").css({"background-color":"#f4f4f4"});
-                    $("#footer-fixed-list li").css({"padding":"4px"});
-                    $("#footer-fixed-list > nav").removeClass("footer-fixed-list-separator");
-                    $("#footer-bottom").addClass("row");
-                    $("#footer-bottom").css({"border-top":""});
-                    $("#main-top").hide();
-                }else{
-                    if(stickyOn==false){
-                        $("#header-bottom").show();
-                        $("#header-navbar").show();
-                        if(fixListOn) {
-                            $("#header-fixed-list").show();
-                            $("#header-fixed-title").hide();
-                        }else{
-                            $("#header-fixed-list").hide();
-                            $("#header-fixed-title").show();
-                        }
-                    }
-                    $(".smartNav").hide();
-                    $(".pcNav").show();
-                    $("#three-lines-nav-content").removeClass("threeLinesNavSmartContent container-fluid");
-                    $("#three-lines-nav-content").addClass("container");
-                    $("#footer-top").removeClass("row");
-                    $("#footer-top > div").removeClass("align-items-center text-center");
-                    $("#footer-top-iva").addClass("text-end");
-                    $("#footer-top-iva").css({"font-size":""});
-                    $("#footer-nav-content").removeClass("row");
-                    $("#footer-nav-content").css({"border-top":"","border-top-style":"","border-color":""});
-                    $("#footer-fixed-list").removeClass("row");
-                    $("#footer-fixed-list").css({"background-color":""});
-                    $("#footer-fixed-list li").css({"padding":""});
-                    $("#footer-fixed-list > nav").addClass("footer-fixed-list-separator");
-                    $("#footer-bottom").removeClass("row");
-                    $("#footer-bottom").css({"border-top":"solid 1px black"});
-                    $("#main-top").show();
-                }
-
-                $("#three-lines-nav").click(function(){
-                    if($(window).scrollTop()<$("header").outerHeight(true) && $(window).outerWidth()>768) {
-                        $("#header-fixed-list").toggle();
-                        $("#header-fixed-title").toggle();
-                    }
-                    if(fixListOn){
-                        fixListOn=false;
-                    }else{
-                        fixListOn=true;
-                    }
-                });
-
-                $("#searchBar").hover(function(){
-                    if($(window).outerWidth() > 992){
-                        $("#searchIcon").addClass("bg-body-tertiary")
-                    }
-                },function(){
-                    if($(window).outerWidth() > 992){
-                        $("#searchIcon").removeClass("bg-body-tertiary")
-                    }
-                })
-
-                $("#searchInput").focus(function(){
-                    $(this).addClass("border shadow-none")
-                    $("#searchButton").addClass("d-flex")
-                })
-
-                $("#searchInput").blur(function(){
-                    $(this).removeClass("border shadow-none")
-                    $("#searchButton").removeClass("d-flex")
-                })
-
-                $(window).scroll(function(){
-                    if ($(window).scrollTop() > $("header").outerHeight(true)) {
-                        $("header").addClass("sticky-header");
-                        if($(window).outerWidth()>768){
-                            $("#header-bottom").hide();
-                            $("#header-navbar").hide();
-                            $("#header-fixed-list").hide();
-                            $("#header-fixed-title").show();
-                        }
-                        stickyOn=true;
-                    } else {
-                        $("header").removeClass("sticky-header");
-                        if($(window).outerWidth()>768){
-                            $("#header-bottom").show();
-                            $("#header-navbar").show();
-                            if (fixListOn) {
-                                $("#header-fixed-list").show();
-                                $("#header-fixed-title").hide();
-                            } else {
-                                $("#header-fixed-list").hide();
-                                $("#header-fixed-title").show();
-                            }
-                        }
-                        stickyOn=false;                    }
-                })
-
-                $(window).on('resize', function(){
-                    if (win.outerWidth() < 1400) {
-                        $("#logSubButtons").hide();
-                        $("#userButton").show();
-                    }else{
-                        $("#logSubButtons").show();
-                        $("#userButton").hide();
-                    }
-                    if(win.outerWidth()<1200){
-                        $("#searchIcon").hide();
-                        $("#searchInput").css({"border":"1px","border-style":"solid"});
-                        $("#searchButton").show();
-                    }
-                    else{
-                        $("#searchIcon").show();
-                        $("#searchInput").css({"border":"","border-style":""});
-                        $("#searchButton").hide();
-                    }
-                    if (win.outerWidth() < 992) {
-                        $("#brand-list").hide();
-                        $("#searchBar").prependTo("#three-lines-nav-content");
-                        $("#searchBar").addClass("spaceSeparator separator");
-                        $("#searchIcon").show();
-                        $("#searchIcon").addClass("bg-body-tertiary");
-                        $("#searchButton").hide();
-                    }else{
-                        $("#brand-list").show();
-                        $("#searchBar").appendTo("#header-top-left");
-                        $("#searchBar").removeClass("spaceSeparator separator");
-                        $("#searchIcon").removeClass("bg-body-tertiary");
-                    }
-                    if(win.outerWidth()<768){
-                        $("#header-bottom").hide();
-                        $("#header-navbar").hide();
-                        $("#header-fixed-list").hide();
-                        $("#header-fixed-title").show();
-                        $(".smartNav").show();
-                        $(".pcNav").hide();
-                        $("#three-lines-nav-content").addClass("threeLinesNavSmartContent container-fluid");
-                        $("#three-lines-nav-content").removeClass("container");
-                        $("#footer-top").addClass("row");
-                        $("#footer-top > div").addClass("align-items-center text-center");
-                        $("#footer-top-iva").removeClass("text-end");
-                        $("#footer-top-iva").css({"font-size":"0.625rem"});
-                        $("#footer-nav-content").addClass("row");
-                        $("#footer-nav-content").css({"border-top":"1px","border-top-style":"solid","border-color":"#ddd"});
-                        $("#footer-fixed-list").addClass("row");
-                        $("#footer-fixed-list").css({"background-color":"#f4f4f4"});
-                        $("#footer-fixed-list li").css({"padding":"4px"});
-                        $("#footer-fixed-list > nav").removeClass("footer-fixed-list-separator");
-                        $("#footer-bottom").addClass("row");
-                        $("#footer-bottom").css({"border-top":""});
-                        $("#main-top").hide();
-                    }else{
-                        if(stickyOn==false){
-                            $("#header-bottom").show();
-                            $("#header-navbar").show();
-                            if(fixListOn) {
-                                $("#header-fixed-list").show();
-                                $("#header-fixed-title").hide();
-                            }else{
-                                $("#header-fixed-list").hide();
-                                $("#header-fixed-title").show();
-                            }
-                        }
-                        $(".smartNav").hide();
-                        $(".pcNav").show();
-                        $("#three-lines-nav-content").removeClass("threeLinesNavSmartContent container-fluid");
-                        $("#three-lines-nav-content").addClass("container");
-                        $("#footer-top").removeClass("row");
-                        $("#footer-top > div").removeClass("align-items-center text-center");
-                        $("#footer-top-iva").addClass("text-end");
-                        $("#footer-top-iva").css({"font-size":""});
-                        $("#footer-nav-content").removeClass("row");
-                        $("#footer-nav-content").css({"border-top":"","border-top-style":"","border-color":""});
-                        $("#footer-fixed-list").removeClass("row");
-                        $("#footer-fixed-list").css({"background-color":""});
-                        $("#footer-fixed-list li").css({"padding":""});
-                        $("#footer-fixed-list > nav").addClass("footer-fixed-list-separator");
-                        $("#footer-bottom").removeClass("row");
-                        $("#footer-bottom").css({"border-top":"solid 1px black"});
-                        $("#main-top").show();
-                    }
-                });
-            });
-        </script>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-
         <link href="style.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="https://kit.fontawesome.com/8ca2ea010b.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+        <script src="util.js"></script>
 
         <title>Il messaggero</title>
     </head>
     <body>
         <header>
             <div class="container">
-                <div class="row text-center justify-content-between align-items-center" id="header-top">
-                    <div class="col-md-4 col-3 d-inline-flex justify-content-start align-items-center" id="header-top-left">
+                <div class="row" id="header-top">
+                    <div class="col-md-4 col-3" id="header-top-left">
                         <button type="button" class="smartButton" id="three-lines-nav" data-bs-toggle="collapse" data-bs-target="#three-lines-nav-content" aria-controls="three-lines-nav-content" aria-expanded="false" aria-label="three-lines-nav-content">
                             <i class="fa-solid fa-bars-staggered fa-lg"></i>
                         </button>
@@ -266,18 +32,18 @@
                             <button type="button" class="bg-prim" id="searchButton">Cerca</button>
                         </div>
                     </div>
-                    <div class="col-md-4 col-6 d-inline-flex justify-content-center align-items-center" id="header-top-center">
+                    <div class="col-md-4 col-6" id="header-top-center">
                         <ul class="list-group list-group-horizontal list-unstyled justify-content-center flex-wrap" id="header-fixed-list">
-                            <li class="mx-2"><a class="text-reset text-decoration-none fw-bold fs-11px" href="#" title="Elezioni Friuli Venezia Giulia">Elezioni Friuli</a></li>
-                            <li class="mx-2"><a class="text-reset text-decoration-none fw-bold fs-11px" href="#" title="Gf Vip finale">Gf Vip finale</a></li>
-                            <li class="mx-2"><a class="text-reset text-decoration-none fw-bold fs-11px" href="#" title="Tom Cruise">Tom Cruise</a></li>
-                            <li class="mx-2"><a class="text-reset text-decoration-none fw-bold fs-11px" href="#" title="Liceo made in italy">Liceo made in italy</a></li>
+                            <li><a class="text-reset text-decoration-none" href="#" title="Lorem Ipsum">Lorem Ipsum</a></li>
+                            <li><a class="text-reset text-decoration-none" href="#" title="Hello World!">Hello World!</a></li>
+                            <li><a class="text-reset text-decoration-none" href="#" title="Billi Marco">Billi Marco</a></li>
+                            <li><a class="text-reset text-decoration-none" href="#" title="Progetto PPM front-end">Progetto PPM front-end</a></li>
                         </ul>
                         <div id="header-fixed-title">
                             <a href="https://www.ilmessaggero.it" title="Il messaggero"><img src="immagini/Logo/MessaggeroLogo.svg" class="img-fluid"></a>
                         </div>
                     </div>
-                    <div class="col-md-4 col-3 d-inline-flex justify-content-end align-items-center" id="header-top-right">
+                    <div class="col-md-4 col-3" id="header-top-right">
                         <div id="logSubButtons">
                             <button type="button" class="bg-prim" id="abbonati-button">ABBONATI</button>
                             <button type="button" class="bg-prim-subtle" id="accedi-button">ACCEDI</button>
@@ -301,9 +67,9 @@
 
                 <div class="collapse bg-white container" id="three-lines-nav-content">
                     <div class="row pcNav">
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                            <div class="fs-14px fw-bold mb-2">SEZIONI</div>
-                            <ul class="list-group list-unstyled mx-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 pcNav-collumn">
+                            <div>SEZIONI</div>
+                            <ul class="list-group list-unstyled">
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Persone</a></li>
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Italia</a></li>
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Mondo</a></li>
@@ -321,9 +87,9 @@
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Blog</a></li>
                             </ul>
                         </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                            <div class="fs-14px fw-bold mb-2 no-title-section"></div>
-                            <ul class="list-group list-unstyled mx-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 pcNav-collumn">
+                            <div class="no-title-section"></div>
+                            <ul class="list-group list-unstyled">
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Social</a></li>
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Animali</a></li>
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Alimentazione</a></li>
@@ -340,9 +106,9 @@
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Partner</a></li>
                             </ul>
                         </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                            <div class="fs-14px fw-bold mb-2">EDIZIONI LOCALI</div>
-                            <ul class="list-group list-unstyled mx-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 pcNav-collumn">
+                            <div>EDIZIONI LOCALI</div>
+                            <ul class="list-group list-unstyled">
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Roma</a></li>
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Viterbo</a></li>
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Rieti</a></li>
@@ -353,17 +119,17 @@
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Umbria</a></li>
                             </ul>
                         </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                            <div class="fs-14px fw-bold mb-2">MULTIMEDIA</div>
-                            <ul class="list-group list-unstyled mx-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 pcNav-collumn">
+                            <div>MULTIMEDIA</div>
+                            <ul class="list-group list-unstyled">
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Video</a></li>
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Podcast</a></li>
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Foto</a></li>
                             </ul>
                         </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                            <div class="fs-14px fw-bold mb-2">SERVIZI</div>
-                            <ul class="list-group list-unstyled mx-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 pcNav-collumn">
+                            <div>SERVIZI</div>
+                            <ul class="list-group list-unstyled">
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Smart City</a></li>
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Meteo</a></li>
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Oroscopo</a></li>
@@ -372,9 +138,9 @@
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Necrologie</a></li>
                             </ul>
                         </div>
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                            <div class="fs-14px fw-bold mb-2">NETWORK</div>
-                            <ul class="list-group list-unstyled mx-2">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-12 pcNav-collumn">
+                            <div>NETWORK</div>
+                            <ul class="list-group list-unstyled">
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Il Mattino</a></li>
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Corriere Adriatico</a></li>
                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Il Gazzettino</a></li>
@@ -388,14 +154,14 @@
                         </div>
                     </div>
                     <div class="spaceDivs smartNav">
-                        <div class="separator">
-                            <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#sezioniCollapse1" role="button" aria-expanded="false" aria-controls="sezioniCollapse1">
+                        <div class="separator smartNav-collapse">
+                            <a class="text-reset text-decoration-none" data-bs-toggle="collapse" href="#sezioniCollapse1" role="button" aria-expanded="false" aria-controls="sezioniCollapse1">
                                 SEZIONI
                             </a>
                             <div class="collapse" id="sezioniCollapse1">
                                 <div class="row">
                                     <div class="col-6">
-                                        <ul class="list-group list-unstyled mx-2">
+                                        <ul class="list-group list-unstyled">
                                             <li><a href="#" class="text-reset text-decoration-none" title="#">Persone</a></li>
                                             <li><a href="#" class="text-reset text-decoration-none" title="#">Italia</a></li>
                                             <li><a href="#" class="text-reset text-decoration-none" title="#">Mondo</a></li>
@@ -434,8 +200,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="separator">
-                            <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#localiCollapse1" role="button" aria-expanded="false" aria-controls="localiCollapse1">
+                        <div class="separator smartNav-collapse">
+                            <a class="text-reset text-decoration-none" data-bs-toggle="collapse" href="#localiCollapse1" role="button" aria-expanded="false" aria-controls="localiCollapse1">
                                 NOTIZIE LOCALI
                             </a>
                             <div class="collapse" id="localiCollapse1" >
@@ -457,8 +223,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="separator">
-                            <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#multimediaCollapse1" role="button" aria-expanded="false" aria-controls="multimediaCollapse1">
+                        <div class="separator smartNav-collapse">
+                            <a class="text-reset text-decoration-none" data-bs-toggle="collapse" href="#multimediaCollapse1" role="button" aria-expanded="false" aria-controls="multimediaCollapse1">
                                 MULTIMEDIA
                             </a>
                             <div class="collapse" id="multimediaCollapse1">
@@ -475,8 +241,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="separator">
-                            <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#serviziCollapse1" role="button" aria-expanded="false" aria-controls="serviziCollapse1">
+                        <div class="separator smartNav-collapse">
+                            <a class="text-reset text-decoration-none" data-bs-toggle="collapse" href="#serviziCollapse1" role="button" aria-expanded="false" aria-controls="serviziCollapse1">
                                 SERVIZI
                             </a>
                             <div class="collapse" id="serviziCollapse1">
@@ -499,22 +265,22 @@
                     </div>
                 </div>
 
-                <div class="row align-items-center" id="header-bottom">
-                    <div class="col-md-3 text-start" id="header-bottom-left">
-                        <div class="d-flex-inline" id="meteo">
+                <div class="row" id="header-bottom">
+                    <div class="col-md-3" id="header-bottom-left">
+                        <div id="meteo">
                             <a href="#" class="text-reset text-decoration-none" title="meteo">
-                                <span class="fs-10px mx-1" id="day">mer 15 aprile</span>
-                                <span class="mx-1" id="meteoIcon"><img src="immagini/Tempo/sole.jpg" width="20px" height="20px"></span>
-                                <span class="fs-10px mx-1" id="temp">10.3°C</span>
-                                <span class="fs-10px mx-1" id="città">Roma</span>
+                                <span id="day">dom 16 aprile</span>
+                                <span id="meteoIcon"><img src="immagini/Tempo/sole.jpg" width="20px" height="20px"></span>
+                                <span id="temp">10.3°C</span>
+                                <span id="città">Roma</span>
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-6 text-center" id="header-bottom-center"><img src="immagini/Logo/MessaggeroLogo.svg" class="img-fluid"></div>
-                    <div class="col-md-3 text-end" id="header-bottom-right">
-                        <div class="d-flex align-items-center justify-content-end" id="zodiacale">
-                            <div class="fs-11px" id="zodiacDescription">
-                                <div class="fw-bold" id="zodiacName">Ariete</div>
+                    <div class="col-md-6" id="header-bottom-center"><img src="immagini/Logo/MessaggeroLogo.svg" class="img-fluid"></div>
+                    <div class="col-md-3" id="header-bottom-right">
+                        <div id="zodiacale">
+                            <div id="zodiacDescription">
+                                <div id="zodiacName">Ariete</div>
                                 <div id="zodiacPeriod">Dal 21 marzo al 19 aprile</div>
                             </div>
                             <div id="zodiacSimbol"><img src="immagini/Zodiacali/Ariete.jpg" width="70px" height="70px"></div>
@@ -522,34 +288,39 @@
                     </div>
                 </div>
 
-                <nav class="nav nav-fill border-top border-bottom fs-11px" id="header-navbar">
-                    <a class="nav-link text-reset text-decoration-none fw-bold active" aria-current="page" href="#">POLITICA</a>
-                    <a class="nav-link text-reset text-decoration-none fw-bold" href="#">ITALIA</a>
-                    <a class="nav-link text-reset text-decoration-none fw-bold" href="#">SPORT</a>
-                    <a class="nav-link text-reset text-decoration-none fw-bold" href="#">MONDO</a>
-                    <a class="nav-link text-reset text-decoration-none fw-bold" href="#">VATICANO</a>
-                    <a class="nav-link text-reset text-decoration-none fw-bold" href="#">ECONOMIA</a>
-                    <a class="nav-link text-reset text-decoration-none fw-bold" href="#">SPETTACOLI</a>
-                    <a class="nav-link text-reset text-decoration-none fw-bold" href="#">TECH</a>
-                    <a class="nav-link text-reset text-decoration-none fw-bold" href="#">MOTORI</a>
-                    <a class="nav-link text-reset text-decoration-none fw-bold" href="#">DONNA</a>
-                    <a class="nav-link text-reset text-decoration-none fw-bold" href="#">MODA</a>
-                    <a class="nav-link text-reset text-decoration-none fw-bold" href="#">SALUTE</a>
-                    <a class="nav-link text-reset text-decoration-none fw-bold" href="#">PODCAST</a>
-                    <a class="bg-prim nav-link text-white fw-bold" href="#">ROMA</a>
+                <nav class="nav nav-fill" id="header-navbar">
+                    <a class="nav-link text-reset text-decoration-none" href="#">POLITICA</a>
+                    <a class="nav-link text-reset text-decoration-none" href="#">ITALIA</a>
+                    <a class="nav-link text-reset text-decoration-none" href="#">SPORT</a>
+                    <a class="nav-link text-reset text-decoration-none" href="#">MONDO</a>
+                    <a class="nav-link text-reset text-decoration-none" href="#">VATICANO</a>
+                    <a class="nav-link text-reset text-decoration-none" href="#">ECONOMIA</a>
+                    <a class="nav-link text-reset text-decoration-none" href="#">SPETTACOLI</a>
+                    <a class="nav-link text-reset text-decoration-none" href="#">TECH</a>
+                    <a class="nav-link text-reset text-decoration-none" href="#">MOTORI</a>
+                    <a class="nav-link text-reset text-decoration-none" href="#">DONNA</a>
+                    <a class="nav-link text-reset text-decoration-none" href="#">MODA</a>
+                    <a class="nav-link text-reset text-decoration-none" href="#">SALUTE</a>
+                    <a class="nav-link text-reset text-decoration-none" href="#">PODCAST</a>
+                    <a class="bg-prim nav-link text-white" href="#">ROMA</a>
                     <a class="nav-link dropdown-toggle text-reset fw-bold bg-body-tertiary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         EDIZIONI LOCALI
                     </a>
-                    <ul class="dropdown-menu border rounded-0" id="dropdownMenu1">
-                        <li><a class="dropdown-item fs-11px fw-bold" href="#">VITERBO</a></li>
-                        <li><a class="dropdown-item fs-11px fw-bold" href="#">LATINA</a></li>
-                        <li><a class="dropdown-item fs-11px fw-bold" href="#">RIETI</a></li>
-                        <li><a class="dropdown-item fs-11px fw-bold" href="#">FROSINONE</a></li>
-                        <li><a class="dropdown-item fs-11px fw-bold" href="#">ABRUZZO</a></li>
-                        <li><a class="dropdown-item fs-11px fw-bold" href="#">MARCHE</a></li>
-                        <li><a class="dropdown-item fs-11px fw-bold" href="#">UMBRIA</a></li>
+                    <ul class="dropdown-menu" id="dropdownMenu1">
+                        <li><a class="dropdown-item" href="#">VITERBO</a></li>
+                        <li><a class="dropdown-item" href="#">LATINA</a></li>
+                        <li><a class="dropdown-item" href="#">RIETI</a></li>
+                        <li><a class="dropdown-item" href="#">FROSINONE</a></li>
+                        <li><a class="dropdown-item" href="#">ABRUZZO</a></li>
+                        <li><a class="dropdown-item" href="#">MARCHE</a></li>
+                        <li><a class="dropdown-item" href="#">UMBRIA</a></li>
                     </ul>
                 </nav>
+            </div>
+
+            <div id="last-update">
+                Domenica 16 aprile ultimo agg.
+                <span>19:18</span>
             </div>
         </header>
 
@@ -599,7 +370,6 @@
                     </article>
                 </div>
 
-                <!--Primo contenuto-->
                 <div class="row partition" id="main-first">
                     <section class="col-lg-8" id="newsSection1">
                         <div class="space">
@@ -1500,7 +1270,7 @@
                         </div>
                     </aside>
                 </div>
-                <!--Primo contenuto end-->
+
                 <div class="space partition" id="main-middle">
                     <article class="type-4 header-mid fullscreen">
                         <div class="midArticleHeader white">
@@ -2241,7 +2011,6 @@
                     </article>
                 </div>
 
-                <!--Secondo contenuto-->
                 <div class="row partition" id="main-second">
                     <section class="col-lg-8">
                         <div class="space">
@@ -3272,7 +3041,7 @@
                         </div>
                     </aside>
                 </div>
-                <!--Secondo contenuto end-->
+
                 <div class="space partition" id="main-bottom">
                     <article class="type-3 header-mid">
                         <div class="midArticleHeader blue">
@@ -3360,29 +3129,29 @@
                         </div>
                     </article>
                 </div>
+
             </div>
         </section>
 
         <footer>
             <div class="container">
-                <!--Footer head-->
                 <div id="footer-top">
                     <div class="row">
                         <div class="col-md-6" id="footer-top-title">
                             <a href="https://www.ilmessaggero.it" title="Il messaggero"><img src="immagini/Logo/MessaggeroLogo.svg" class="img-fluid"></a>
                         </div>
-                        <div class="col-md-6 text-end" id="footer-top-iva">
+                        <div class="col-md-6" id="footer-top-iva">
                             © 2023 Il MESSAGGERO - C.F. e P. IVA 05629251009
                         </div>
                     </div>
                 </div>
-                <!--Footer mid-->
+
                 <div id="footer-middle">
                     <div id="footer-nav-content">
                         <div class="row pcNav">
-                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                                <div class="fs-14px fw-bold mb-2">SEZIONI</div>
-                                <ul class="list-group list-unstyled mx-2">
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 pcNav-collumn">
+                                <div>SEZIONI</div>
+                                <ul class="list-group list-unstyled">
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Persone</a></li>
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Italia</a></li>
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Mondo</a></li>
@@ -3400,9 +3169,9 @@
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Blog</a></li>
                                 </ul>
                             </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                                <div class="fs-14px fw-bold mb-2 no-title-section"></div>
-                                <ul class="list-group list-unstyled mx-2">
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 pcNav-collumn">
+                                <div class="no-title-section"></div>
+                                <ul class="list-group list-unstyled">
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Social</a></li>
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Animali</a></li>
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Alimentazione</a></li>
@@ -3419,9 +3188,9 @@
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Partner</a></li>
                                 </ul>
                             </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                                <div class="fs-14px fw-bold mb-2">EDIZIONI LOCALI</div>
-                                <ul class="list-group list-unstyled mx-2">
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 pcNav-collumn">
+                                <div>EDIZIONI LOCALI</div>
+                                <ul class="list-group list-unstyled">
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Roma</a></li>
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Viterbo</a></li>
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Rieti</a></li>
@@ -3432,17 +3201,17 @@
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Umbria</a></li>
                                 </ul>
                             </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                                <div class="fs-14px fw-bold mb-2">MULTIMEDIA</div>
-                                <ul class="list-group list-unstyled mx-2">
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 pcNav-collumn">
+                                <div>MULTIMEDIA</div>
+                                <ul class="list-group list-unstyled">
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Video</a></li>
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Podcast</a></li>
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Foto</a></li>
                                 </ul>
                             </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                                <div class="fs-14px fw-bold mb-2">SERVIZI</div>
-                                <ul class="list-group list-unstyled mx-2">
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 pcNav-collumn">
+                                <div>SERVIZI</div>
+                                <ul class="list-group list-unstyled">
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Smart City</a></li>
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Meteo</a></li>
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Oroscopo</a></li>
@@ -3451,9 +3220,9 @@
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Necrologie</a></li>
                                 </ul>
                             </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 my-2">
-                                <div class="fs-14px fw-bold mb-2">NETWORK</div>
-                                <ul class="list-group list-unstyled mx-2">
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-12 pcNav-collumn">
+                                <div>NETWORK</div>
+                                <ul class="list-group list-unstyled">
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Il Mattino</a></li>
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Corriere Adriatico</a></li>
                                     <li><a href="#" class="text-reset text-decoration-none" title="#">Il Gazzettino</a></li>
@@ -3467,14 +3236,14 @@
                             </div>
                         </div>
                         <div class="spaceDivs smartNav">
-                            <div class="separator">
-                                <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#sezioniCollapse2" role="button" aria-expanded="false" aria-controls="sezioniCollapse2">
+                            <div class="separator smartNav-collapse">
+                                <a class="text-reset text-decoration-none" data-bs-toggle="collapse" href="#sezioniCollapse2" role="button" aria-expanded="false" aria-controls="sezioniCollapse2">
                                     SEZIONI
                                 </a>
                                 <div class="collapse" id="sezioniCollapse2">
                                     <div class="row">
                                         <div class="col-6">
-                                            <ul class="list-group list-unstyled mx-2">
+                                            <ul class="list-group list-unstyled">
                                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Persone</a></li>
                                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Italia</a></li>
                                                 <li><a href="#" class="text-reset text-decoration-none" title="#">Mondo</a></li>
@@ -3513,8 +3282,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="separator">
-                                <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#localiCollapse2" role="button" aria-expanded="false" aria-controls="localiCollapse2">
+                            <div class="separator smartNav-collapse">
+                                <a class="text-reset text-decoration-none" data-bs-toggle="collapse" href="#localiCollapse2" role="button" aria-expanded="false" aria-controls="localiCollapse2">
                                     NOTIZIE LOCALI
                                 </a>
                                 <div class="collapse" id="localiCollapse2" >
@@ -3536,8 +3305,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="separator">
-                                <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#multimediaCollapse2" role="button" aria-expanded="false" aria-controls="multimediaCollapse2">
+                            <div class="separator smartNav-collapse">
+                                <a class="text-reset text-decoration-none" data-bs-toggle="collapse" href="#multimediaCollapse2" role="button" aria-expanded="false" aria-controls="multimediaCollapse2">
                                     MULTIMEDIA
                                 </a>
                                 <div class="collapse" id="multimediaCollapse2">
@@ -3554,8 +3323,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="separator">
-                                <a class="text-reset text-decoration-none fs-14px fw-bold mb-2" data-bs-toggle="collapse" href="#serviziCollapse2" role="button" aria-expanded="false" aria-controls="serviziCollapse2">
+                            <div class="separator smartNav-collapse">
+                                <a class="text-reset text-decoration-none" data-bs-toggle="collapse" href="#serviziCollapse2" role="button" aria-expanded="false" aria-controls="serviziCollapse2">
                                     SERVIZI
                                 </a>
                                 <div class="collapse" id="serviziCollapse2">
@@ -3591,7 +3360,7 @@
                         </nav>
                     </div>
                 </div>
-                <!--Footer end-->
+
                 <div id="footer-bottom">
                     <nav id="footer-fixed-info">
                         <ul class="list-group list-group-horizontal list-unstyled justify-content-center flex-wrap">
@@ -3605,4 +3374,13 @@
                 </div>
             </div>
         </footer>
+
+        <div id="smart-footer">
+            <ul class="list-group list-group-horizontal list-unstyled justify-content-center flex-wrap">
+                <li><a class="text-reset text-decoration-none" href="#" title="MESSAGGERO"><img src="immagini/Logo/mLogo.png" alt="..." width="35px" height="35px"></a></li>
+                <li><a class="text-reset text-decoration-none" href="#" title="ROMA">ROMA</a></li>
+                <li><a class="text-reset text-decoration-none" href="#" title="SPORT">SPORT</a></li>
+                <li><a class="text-reset text-decoration-none" href="#" title="VIDEO">VIDEO</a></li>
+            </ul>
+        </div>
     </body>

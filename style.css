@@ -290,11 +290,13 @@
     border-width:0 0 1px 0;
     border-style:solid;
     border-color: #e5e5e5;
+    border-radius: 0;
 }
 .separatorBlack{
     border-width:0 0 1px 0;
     border-style:solid;
     border-color: black;
+    border-radius: 0;
 }
 .author{
     font-size: 0.875rem;
@@ -368,13 +370,63 @@
 .threeLinesNavSmartContent{
     height: calc(100vh - 64px);
     overflow-y: auto;
+    z-index:1000;
 }
 #header-top{
     min-height:64px;
     padding:8px 0;
+    align-items:center;
+    justify-content: space-between;
+    text-align: center;
+}
+#header-top > div{
+    display: inline-flex;
+    align-items: center;
+}
+#header-top-left{
+    justify-content: start;
+}
+#header-top-center{
+    justify-content: center;
+}
+#header-top-right{
+    justify-content: end;
+}
+#header-fixed-list li{
+    margin:0 8px;
+    font-size: 11px;
+    font-weight: bold;
 }
 #header-bottom{
     padding:8px 0;
+    align-items: center;
+}
+#header-bottom-left{
+    text-align: start;
+}
+#header-bottom-center{
+    text-align: center;
+}
+#header-bottom-right{
+    text-align: end;
+}
+#meteo{
+    display: inline-flex;
+}
+#meteo a > span{
+    font-size:10px;
+    margin:0 4px;
+}
+#zodiacale{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+#zodiacDescription{
+    font-size:11px;
+}
+#zodiacName{
+    font-weight:bold;
 }
 #three-lines-nav-content ul li a{
     display: block;
@@ -385,6 +437,22 @@
     font-stretch: normal;
     font-style: normal;
     letter-spacing: normal;
+}
+.pcNav-collumn{
+    margin:8px 0;
+}
+.pcNav-collumn > div{
+    font-size:14px;
+    font-weight: bold;
+    margin-bottom:8px;
+}
+.pcNav-collumn > ul{
+    margin:0 8px;
+}
+.smartNav-collapse > a{
+    font-size:14px;
+    font-weight: bold;
+    margin-bottom:8px;
 }
 .no-title-section{
     padding-bottom:19.188px
@@ -438,22 +506,39 @@
 #header-fixed-title img{
     height:3rem;
 }
+#header-navbar{
+    border-top:1px;
+    border-bottom:1px;
+    border-left:0;
+    border-right:0;
+    border-style: solid;
+    border-color: #e5e5e5;
+    font-size:11px;
+    font-weight:bold;
+}
 #dropdownMenu1{
     min-width:140px;
+    border-radius:0;
+}
+#dropdownMenu1 a{
+    font-size:11px;
+    font-weight:bold;
 }
 .smartButton{
     background-color:transparent;
     border: 0;
     padding:8px;
 }
-/*
-.smartHeaderFixedList{
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-bottom: 8px;
-    align-items: center;
+#last-update{
+    font-size: 11px;
+    font-weight: 500;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #f4f4f4;
 }
-*/
 
 /*Footer*/
 #footer-top{
@@ -469,6 +554,7 @@
 #footer-top-iva{
     font-size: 0.875rem;
     font-weight: 600;
+    text-align: end;
 }
 #footer-nav-content{
     padding:32px 0;
@@ -509,6 +595,28 @@
     font-weight: 500;
     line-height: 2.1;
     padding: 0 14px;
+}
+#smart-footer ul {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-top: 1px #ebebeb solid;
+    position: fixed;
+    z-index: 999;
+    height: 63px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 7px 0 rgba(152,152,152,.29);
+    padding: 0 16px;
+    border-radius: 0;
+}
+#smart-footer ul li {
+    text-align: center;
+    width: 25%;
+    font-size: 12px;
+    font-weight: 700;
 }
 /*basic modifiers*/
 .bg-prim{
