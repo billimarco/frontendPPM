@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e5560eb1-7815-49eb-a922-0c5f3f3083ea" name="Changes" comment="Rifinire il main content #1.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Nv6tDfXeObZc2TQ3ekk8A3176D" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Marco/WebstormProjects/progettoPPM&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Marco\WebstormProjects\progettoPPM" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/progettoPPM/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e5560eb1-7815-49eb-a922-0c5f3f3083ea" name="Changes" comment="" />
+      <created>1680532420451</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680532420451</updated>
+      <workItem from="1680532421583" duration="15687000" />
+      <workItem from="1680553404860" duration="5208000" />
+      <workItem from="1680623624180" duration="25914000" />
+      <workItem from="1680685618028" duration="18095000" />
+      <workItem from="1680721494623" duration="5443000" />
+      <workItem from="1680735074267" duration="331000" />
+      <workItem from="1680735417702" duration="106000" />
+      <workItem from="1680735531220" duration="1679000" />
+      <workItem from="1680774755059" duration="20218000" />
+      <workItem from="1680860415909" duration="15299000" />
+      <workItem from="1680939590025" duration="19795000" />
+      <workItem from="1680983523825" duration="11761000" />
+      <workItem from="1681071030788" duration="2775000" />
+      <workItem from="1681307435510" duration="7813000" />
+      <workItem from="1681376529774" duration="4156000" />
+      <workItem from="1681416012278" duration="3764000" />
+      <workItem from="1681465443795" duration="11032000" />
+      <workItem from="1681555134987" duration="6486000" />
+      <workItem from="1681571524074" duration="4215000" />
+      <workItem from="1681576444573" duration="600000" />
+      <workItem from="1681634987673" duration="7603000" />
+      <workItem from="1681651556519" duration="6489000" />
+      <workItem from="1681662729471" duration="2309000" />
+    </task>
+    <task id="LOCAL-00001" summary="Implementazione css di Header e Nav #1">
+      <created>1680548697085</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680548697085</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Implementazione css e jQuery di Header e Nav #2">
+      <created>1680659874588</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680659874588</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Implementazione css e jQuery di Header e Nav #3&#10;Implementazione css del corpo del sito #1">
+      <created>1680735359625</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680735359625</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Implementazione css e jQuery di Header e Nav #3&#10;Implementazione css del corpo del sito #1">
+      <created>1680882610066</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680882610066</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Rendere l'header responsive #1">
+      <created>1680964603965</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680964603965</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Rendere l'header responsive #2">
+      <created>1680995524018</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680995524018</updated>
+    </task>
+    <task id="LOCAL-00007" summary="implementare la parte Aside dei main content (rendendoli responsive e sticky) #1.">
+      <created>1681315329491</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681315329491</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Finire struttura del main content #1.">
+      <created>1681380710775</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681380710775</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Finire struttura del main content #2.">
+      <created>1681485397225</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681485397225</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Implementazione css e jQuery di Footer #1.">
+      <created>1681563395816</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681563395816</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Implementazione css e jQuery di Footer #2.">
+      <created>1681575782535</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681575782535</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Rifinire il main content #1.">
+      <created>1681642665678</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681642665678</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implementazione css di Header e Nav #1" />
+    <MESSAGE value="Implementazione css e jQuery di Header e Nav #2" />
+    <MESSAGE value="Implementazione html e css del corpo del sito #2&#10;Rendere gli article responsive #1" />
+    <MESSAGE value="Rendere l'header responsive #1" />
+    <MESSAGE value="Rendere l'header responsive #2" />
+    <MESSAGE value="implementare la parte Aside dei main content (rendendoli responsive e sticky) #1." />
+    <MESSAGE value="Finire struttura del main content #1." />
+    <MESSAGE value="Finire struttura del main content #2." />
+    <MESSAGE value="Implementazione css e jQuery di Footer #1." />
+    <MESSAGE value="Implementazione css e jQuery di Footer #2." />
+    <MESSAGE value="Rifinire il main content #1." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rifinire il main content #1." />
+  </component>
+</project>
